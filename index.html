@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shee's Kitchen | Luxury Cakes & Patisserie - Nairobi</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fffaf8;
+      font-family: 'Inter', sans-serif;
+      color: #3d2a21;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Color Palette */
+    :root {
+      --blush: #f9e0d4;
+      --blush-dark: #f3cdbc;
+      --gold: #d4af7a;
+      --gold-dark: #b8914e;
+      --cream: #fff7f2;
+      --rose: #e8b4a2;
+      --brown: #5c3e2e;
+      --shadow-sm: 0 8px 20px rgba(0,0,0,0.05);
+      --shadow-md: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    /* Sticky Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 245, 240, 0.98);
+      backdrop-filter: blur(12px);
+      padding: 16px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-bottom: 1px solid #f7e0d4;
+    }
+
+    .logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #b96f4d;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #5c3e2e;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover { color: #c26e4a; }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 40px;
+      padding: 6px 16px;
+      border: 1px solid #f5d5c6;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      padding: 8px;
+      outline: none;
+      font-size: 0.9rem;
+      width: 160px;
+    }
+
+    .cart-wishlist {
+      display: flex;
+      gap: 18px;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .cart-wishlist i { color: #b96f4d; transition: 0.2s; }
+    .cart-wishlist i:hover { transform: scale(1.05); }
+
+    /* FULL SCREEN HERO WITH FIXED BACKGROUND (does not scroll) */
+    .full-hero {
+      height: 100vh;
+      min-height: 700px;
+      background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-position: center 35%;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content-full {
+      max-width: 850px;
+      padding: 30px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(3px);
+      border-radius: 60px;
+      animation: fadeUp 1s ease;
+    }
+
+    .hero-content-full .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: #fff2e8;
+      text-shadow: 3px 3px 20px rgba(0,0,0,0.5);
+    }
+
+    .hero-content-full .tagline {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #ffefe5;
+      margin: 16px 0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn-primary, .btn-outline-gold {
+      padding: 14px 38px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn-primary { background: #c26e4a; color: white; box-shadow: 0 6px 14px rgba(0,0,0,0.3); }
+    .btn-primary:hover { background: #a85938; transform: translateY(-2px); }
+    .btn-outline-gold { background: transparent; border: 2px solid #c26e4a; color: white; backdrop-filter: blur(4px); }
+    .btn-outline-gold:hover { background: #c26e4a; color: white; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      text-align: center;
+      margin: 70px 0 30px;
+      color: #a36243;
+    }
+    .section-title span { font-family: 'Dancing Script', cursive; color: #d4af7a; font-size: 1.8rem; display: block; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+    /* Category Tabs */
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .tab-btn {
+      background: #f8ede6;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #5c3e2e;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: #c26e4a;
+      color: white;
+    }
+
+    /* Product Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 35px;
+      margin: 30px 0;
+    }
+    .product-card {
+      background: white;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      border: 1px solid #f8e0d4;
+    }
+    .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+    .product-img { height: 240px; background-size: cover; background-position: center; transition: 0.4s; }
+    .product-info { padding: 20px; }
+    .product-title { font-weight: 700; font-size: 1.2rem; }
+    .price { color: #c26e4a; font-weight: 700; font-size: 1.1rem; margin: 8px 0; }
+    .rating { color: #ffb347; margin: 6px 0; font-size: 0.9rem; }
+    .add-to-cart { background: #f5e2d8; border: none; padding: 10px 0; width: 100%; border-radius: 60px; font-weight: 600; cursor: pointer; transition: 0.2s; margin-top: 12px; }
+    .add-to-cart:hover { background: #c26e4a; color: white; }
+    .badge { background: #d4af7a; color: white; padding: 4px 12px; border-radius: 40px; font-size: 0.7rem; display: inline-block; margin-bottom: 8px; }
+
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #2c211c;
+      color: #fae7de;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 500;
+      z-index: 1200;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* FLOATING BUTTONS - Back to Top (Left) + WhatsApp (Right) */
+    .floating-buttons {
+      position: fixed;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .float-left {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      pointer-events: auto;
+    }
+    .float-right {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      pointer-events: auto;
+    }
+    .back-to-top, .whatsapp-float {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      border: none;
+      font-size: 26px;
+    }
+    .back-to-top {
+      background: #c26e4a;
+      color: white;
+    }
+    .back-to-top:hover {
+      background: #a85938;
+      transform: scale(1.08);
+    }
+    .whatsapp-float {
+      background: #25D366;
+      color: white;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      background: #20b859;
+    }
+
+    /* Features */
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      background: #fff5ef;
+      border-radius: 70px;
+      padding: 50px 30px;
+      margin: 50px 0;
+    }
+    .feature { text-align: center; flex: 1; min-width: 160px; }
+    .feature i { font-size: 2.5rem; color: #d4af7a; margin-bottom: 16px; }
+
+    /* Offer Banner */
+    .offer-banner {
+      background: linear-gradient(115deg, #fbe6db, #f7d9cb);
+      border-radius: 60px;
+      padding: 50px;
+      text-align: center;
+      margin: 50px 0;
+    }
+    .coupon { background: white; display: inline-block; padding: 12px 36px; border-radius: 60px; font-weight: bold; letter-spacing: 2px; margin-top: 20px; border: 1px dashed #d4af7a; }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .gallery-item { border-radius: 32px; overflow: hidden; height: 260px; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    /* Footer */
+    .footer {
+      background: #2c211c;
+      color: #fae7de;
+      padding: 60px 0 30px;
+      margin-top: 70px;
+    }
+    .footer-grid { display: flex; flex-wrap: wrap; gap: 50px; justify-content: space-between; }
+    .footer-col { flex: 1; min-width: 180px; }
+    .footer-col h4 { font-family: 'Playfair Display'; margin-bottom: 20px; color: #e7bc9e; }
+    .footer-col input { padding: 12px; border-radius: 60px; border: none; width: 100%; margin: 10px 0; }
+    .footer-col a { color: #f0cfbe; text-decoration: none; }
+    .footer-col a:hover { color: #e7bc9e; }
+
+    /* Cart Sidebar */
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -450px;
+      width: 400px;
+      height: 100%;
+      background: white;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+      z-index: 1100;
+      transition: 0.3s;
+      padding: 30px;
+      overflow-y: auto;
+    }
+    .cart-sidebar.open { right: 0; }
+    .cart-item { display: flex; gap: 12px; margin: 20px 0; border-bottom: 1px solid #f3e0d6; padding-bottom: 12px; align-items: center; }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1050; display: none; }
+
+    @media (max-width: 900px) {
+      .full-hero { background-attachment: scroll; min-height: 600px; }
+      .hero-content-full .brand { font-size: 2.8rem; }
+      .hero-content-full .tagline { font-size: 1.3rem; }
+      .navbar { padding: 16px 20px; flex-direction: column; }
+      .container { padding: 0 20px; }
+      .toast-notification { white-space: normal; text-align: center; width: 80%; font-size: 0.85rem; }
+      .float-left { left: 15px; bottom: 20px; }
+      .float-right { right: 15px; bottom: 20px; }
+      .back-to-top, .whatsapp-float { width: 48px; height: 48px; font-size: 22px; }
+      .cart-sidebar { width: 100%; right: -100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Toast Notification -->
+<div id="toastMsg" class="toast-notification">✨ Added to cart ✨</div>
+
+<!-- Sticky Navbar -->
+<nav class="navbar">
+  <a href="#" class="logo">Shee's Kitchen</a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search cakes...">
+    <i class="fas fa-search"></i>
+  </div>
+  <div class="cart-wishlist">
+    <i class="far fa-heart" id="wishlistIcon"></i>
+    <i class="fas fa-shopping-cart" id="cartIcon"></i>
+  </div>
+</nav>
+
+<!-- FULL SCREEN HERO with fixed background -->
+<section id="home" class="full-hero">
+  <div class="hero-content-full">
+    <div class="brand">Shee's Kitchen</div>
+    <div class="tagline">Indulge in Sweet Perfection</div>
+    <p style="font-size: 1.2rem; color: #fff2e8; margin-bottom: 20px;">Freshly baked happiness, crafted with love.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary" id="heroOrderBtn">Order Now</button>
+      <button class="btn-outline-gold" id="exploreMenuBtn">Explore Menu</button>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Shop Section -->
+  <div id="shop" class="section-title"><span>Our Sweet Collections</span>Shop by Occasion & Flavor</div>
+  
+  <div class="category-tabs">
+    <button class="tab-btn active" data-cat="all">All Cakes</button>
+    <button class="tab-btn" data-cat="event">🎂 Event Cakes</button>
+    <button class="tab-btn" data-cat="flavor">🍰 Cake Types</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid"></div>
+
+  <!-- Why Choose Us -->
+  <div class="features-grid">
+    <div class="feature"><i class="fas fa-seedling"></i><h3>Freshly Baked Daily</h3><p>Morning batches, pure love</p></div>
+    <div class="feature"><i class="fas fa-medal"></i><h3>Premium Ingredients</h3><p>Belgian chocolate, real butter</p></div>
+    <div class="feature"><i class="fas fa-palette"></i><h3>Custom Designs</h3><p>Your vision, our artistry</p></div>
+    <div class="feature"><i class="fas fa-shipping-fast"></i><h3>Fast Delivery</h3><p>Same-day in Nairobi</p></div>
+  </div>
+
+  <!-- Special Offers -->
+  <div class="offer-banner">
+    <h2 style="font-family: 'Playfair Display';">🍰 Sweet Deals Just for You 🍰</h2>
+    <div class="coupon">✨ 20% OFF on first order ✨ Code: SHEE20</div>
+    <p style="margin-top: 20px;">Limited time — indulge in luxury at a steal!</p>
+  </div>
+
+  <!-- Gallery Section -->
+  <div id="gallery" class="section-title"><span>Sweet Memories</span>Instagram Gallery</div>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Shee's Kitchen</h4>
+        <p>Luxury artisan bakery, crafting happiness since 2018.</p>
+        <div class="social-icons" style="margin-top: 16px;">
+          <i class="fab fa-instagram" style="font-size: 1.6rem; margin-right: 15px; cursor: pointer;"></i>
+          <i class="fab fa-facebook" style="font-size: 1.6rem; margin-right: 15px; cursor: pointer;"></i>
+          <i class="fab fa-pinterest" style="font-size: 1.6rem; cursor: pointer;"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <p><a href="#home">Home</a></p>
+        <p><a href="#shop">Shop</a></p>
+        <p><a href="#gallery">Gallery</a></p>
+        <p><a href="#contact">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Blush Lane, Nairobi</p>
+        <p><i class="fas fa-phone"></i> +254 716 180 343</p>
+        <p><i class="fas fa-envelope"></i> hello@sheeskitchen.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Get sweet updates & offers</p>
+        <input type="email" placeholder="Your email" id="newsEmail">
+        <button class="btn-primary" style="padding: 10px 20px; margin-top: 8px;" id="newsBtn">Subscribe</button>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">© 2025 Shee's Kitchen — Indulge in Sweet Perfection</div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS: Back to Top (Left) + WhatsApp (Right) -->
+<div class="float-left">
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
+<div class="float-right">
+  <button class="whatsapp-float" id="whatsappFloatBtn" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <h3>Your Cart 🛒</h3>
+  <div id="cartItemsList"></div>
+  <div id="cartTotal" style="font-weight: bold; margin: 20px 0;"></div>
+  <button class="btn-primary" id="checkoutBtn" style="width:100%;">Checkout</button>
+  <button id="closeCartBtn" style="margin-top: 12px; background: #e7cfc2; border: none; padding: 8px; width:100%; border-radius:40px; cursor: pointer;">Close</button>
+</div>
+
+<script>
+  // ==================== PRODUCT DATA WITH KES PRICES ====================
+  const eventCakes = [
+    { id: 1, name: "Wedding Cake", category: "event", price: 15600, rating: 4.9, image: "https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "✨ Wedding Special" },
+    { id: 2, name: "Birthday Cake", category: "event", price: 7150, rating: 4.8, image: "https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🎂 Birthday" },
+    { id: 3, name: "Engagement Cake", category: "event", price: 11050, rating: 4.9, image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "💍 Engagement" },
+    { id: 4, name: "Anniversary Cake", category: "event", price: 11700, rating: 4.8, image: "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "❤️ Anniversary" },
+    { id: 5, name: "Baby Shower Cake", category: "event", price: 8450, rating: 4.7, image: "https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍼 Baby Shower" },
+    { id: 6, name: "Gender Reveal Cake", category: "event", price: 9100, rating: 4.8, image: "https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🎀 Reveal" },
+    { id: 7, name: "Graduation Cake", category: "event", price: 9750, rating: 4.8, image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🎓 Graduation" },
+    { id: 8, name: "Corporate Event Cake", category: "event", price: 14300, rating: 4.9, image: "https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🏢 Corporate" },
+    { id: 9, name: "Bridal Shower Cake", category: "event", price: 10400, rating: 4.9, image: "https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "👰 Bridal" },
+    { id: 10, name: "Retirement Cake", category: "event", price: 10140, rating: 4.7, image: "https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🎉 Retirement" }
+  ];
+
+  const flavorCakes = [
+    { id: 11, name: "Chocolate Truffle Cake", category: "flavor", price: 6240, rating: 4.9, image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "⭐ Bestseller" },
+    { id: 12, name: "Red Velvet Cake", category: "flavor", price: 5850, rating: 4.8, image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🌹 Classic" },
+    { id: 13, name: "Vanilla Buttercream Cake", category: "flavor", price: 5200, rating: 4.7, image: "https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "✨ Vanilla Dream" },
+    { id: 14, name: "Black Forest Cake", category: "flavor", price: 6760, rating: 4.9, image: "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍒 Black Forest" },
+    { id: 15, name: "White Forest Cake", category: "flavor", price: 7020, rating: 4.8, image: "https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🤍 White Forest" },
+    { id: 16, name: "Fruit Cake", category: "flavor", price: 5980, rating: 4.6, image: "https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍇 Fruit Medley" },
+    { id: 17, name: "Carrot Cake", category: "flavor", price: 5720, rating: 4.7, image: "https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🥕 Carrot Spice" },
+    { id: 18, name: "Cheesecake", category: "flavor", price: 6500, rating: 4.9, image: "https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍰 Creamy" },
+    { id: 19, name: "Coffee Mocha Cake", category: "flavor", price: 6370, rating: 4.8, image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "☕ Mocha" },
+    { id: 20, name: "Lemon Drizzle Cake", category: "flavor", price: 5460, rating: 4.7, image: "https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍋 Zesty Lemon" }
+  ];
+
+  const allProducts = [...eventCakes, ...flavorCakes];
+  let cart = [];
+  let currentCategory = "all";
+
+  function showToast(message) {
+    const toast = document.getElementById("toastMsg");
+    toast.textContent = message || "✨ Added to cart ✨";
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2000);
+  }
+
+  function formatKES(price) {
+    return `KSh ${price.toLocaleString()}`;
+  }
+
+  function renderProducts(category = "all", searchTerm = "") {
+    let filtered = category === "all" ? allProducts : allProducts.filter(p => p.category === category);
+    if (searchTerm) {
+      filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
+    const grid = document.getElementById("productsGrid");
+    if (!grid) return;
+    grid.innerHTML = filtered.map(p => `
+      <div class="product-card">
+        <div class="product-img" style="background-image:url('${p.image}')"></div>
+        <div class="product-info">
+          ${p.badge ? `<div class="badge">${p.badge}</div>` : ""}
+          <div class="product-title">${p.name}</div>
+          <div class="price">${formatKES(p.price)}</div>
+          <div class="rating">${"★".repeat(Math.floor(p.rating))} ${p.rating}</div>
+          <button class="add-to-cart" data-id="${p.id}">Add to Cart</button>
+        </div>
+      </div>
+    `).join('');
+    attachCartEvents();
+  }
+
+  function attachCartEvents() {
+    const buttons = document.querySelectorAll(".add-to-cart");
+    buttons.forEach(btn => {
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+      newBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const id = parseInt(newBtn.getAttribute("data-id"));
+        const product = allProducts.find(p => p.id === id);
+        if (product) {
+          cart.push({ ...product, cartId: Date.now() + Math.random() });
+          updateCartUI();
+          showToast(`🍰 ${product.name} added to cart!`);
+        }
+      });
+    });
+  }
+
+  function updateCartUI() {
+    const cartDiv = document.getElementById("cartItemsList");
+    if (!cartDiv) return;
+    if (cart.length === 0) {
+      cartDiv.innerHTML = "<p style='text-align:center;'>Your cart is empty 🧁</p>";
+      document.getElementById("cartTotal").innerHTML = "";
+      return;
+    }
+    let total = 0;
+    cartDiv.innerHTML = cart.map((item, idx) => {
+      total += item.price;
+      return `<div class="cart-item">
+        <img src="${item.image}" width="50" height="50" style="border-radius:20px; object-fit:cover">
+        <div style="flex:1;">
+          <strong>${item.name}</strong><br>
+          ${formatKES(item.price)}
+        </div>
+        <i class="fas fa-trash-alt" style="cursor:pointer; color:#c26e4a;" data-idx="${idx}"></i>
+      </div>`;
+    }).join('');
+    document.getElementById("cartTotal").innerHTML = `<strong>Total: ${formatKES(total)}</strong>`;
+    
+    document.querySelectorAll(".fa-trash-alt").forEach(trash => {
+      trash.addEventListener("click", (e) => {
+        const idx = parseInt(trash.getAttribute("data-idx"));
+        cart.splice(idx, 1);
+        updateCartUI();
+        showToast("🗑️ Item removed");
+      });
+    });
+  }
+
+  // Gallery
+  const galleryImgs = [
+    "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500",
+    "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500",
+    "https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500",
+    "https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500",
+    "https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500",
+    "https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500"
+  ];
+  function renderGallery() {
+    const galleryHtml = galleryImgs.map(img => `<div class="gallery-item"><img src="${img}" alt="cake"></div>`).join('');
+    document.getElementById("galleryGrid").innerHTML = galleryHtml;
+  }
+
+  // Search
+  document.getElementById("searchInput")?.addEventListener("input", (e) => {
+    renderProducts(currentCategory, e.target.value);
+  });
+
+  // Category tabs
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentCategory = btn.getAttribute("data-cat");
+      renderProducts(currentCategory, document.getElementById("searchInput")?.value || "");
+    });
+  });
+
+  // Back to Top functionality
+  document.getElementById("backToTopBtn")?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // WhatsApp Floating Button with number 0716 180 343
+  document.getElementById("whatsappFloatBtn")?.addEventListener("click", () => {
+    const phoneNumber = "254716180343"; // Kenya number without leading 0
+    const message = encodeURIComponent("Hello Shee's Kitchen! I'd like to order a delicious cake 🍰");
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+  });
+
+  // Cart Sidebar
+  const cartSidebar = document.getElementById("cartSidebar");
+  const overlay = document.getElementById("cartOverlay");
+  document.getElementById("cartIcon")?.addEventListener("click", () => {
+    cartSidebar.classList.add("open");
+    overlay.style.display = "block";
+    updateCartUI();
+  });
+  document.getElementById("closeCartBtn")?.addEventListener("click", () => {
+    cartSidebar.classList.remove("open");
+    overlay.style.display = "none";
+  });
+  overlay?.addEventListener("click", () => {
+    cartSidebar.classList.remove("open");
+    overlay.style.display = "none";
+  });
+  document.getElementById("checkoutBtn")?.addEventListener("click", () => {
+    if (cart.length === 0) {
+      showToast("Your cart is empty! Add some delicious cakes 🍰");
+      return;
+    }
+    alert("🎉 Thank you for your order! We'll contact you via WhatsApp within 30 minutes. 🎂");
+  });
+
+  // Hero & Newsletter
+  document.getElementById("heroOrderBtn")?.addEventListener("click", () => {
+    cartSidebar.classList.add("open");
+    overlay.style.display = "block";
+    updateCartUI();
+  });
+  document.getElementById("exploreMenuBtn")?.addEventListener("click", () => document.getElementById("shop").scrollIntoView({ behavior: "smooth" }));
+  document.getElementById("newsBtn")?.addEventListener("click", () => {
+    const email = document.getElementById("newsEmail")?.value;
+    if (email && email.includes("@")) {
+      showToast("📧 Subscribed! Sweet offers incoming.");
+      document.getElementById("newsEmail").value = "";
+    } else {
+      showToast("Please enter a valid email address");
+    }
+  });
+
+  // Initial render
+  renderProducts("all");
+  renderGallery();
+</script>
+</body>
+</html>
