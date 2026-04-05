@@ -3,718 +3,351 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Shee's Kitchen | Luxury Cakes & Patisserie - Nairobi</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 -->
+  <title>Shee's Kitchen | Artisan Cake Menu · Signature Collection · Juja</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #fffaf8;
-      font-family: 'Inter', sans-serif;
-      color: #3d2a21;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    /* Color Palette */
-    :root {
-      --blush: #f9e0d4;
-      --blush-dark: #f3cdbc;
-      --gold: #d4af7a;
-      --gold-dark: #b8914e;
-      --cream: #fff7f2;
-      --rose: #e8b4a2;
-      --brown: #5c3e2e;
-      --shadow-sm: 0 8px 20px rgba(0,0,0,0.05);
-      --shadow-md: 0 12px 28px rgba(0,0,0,0.08);
-    }
-
-    /* Sticky Navbar */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 245, 240, 0.98);
-      backdrop-filter: blur(12px);
-      padding: 16px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border-bottom: 1px solid #f7e0d4;
-    }
-
-    .logo {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #b96f4d;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #5c3e2e;
-      transition: 0.2s;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #fef7f0; font-family: 'Inter', sans-serif; color: #2e241f; line-height: 1.5; scroll-behavior: smooth; }
+    .global-bg-texture { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -2; opacity: 0.1; pointer-events: none; }
+    .content-foreground { position: relative; z-index: 1; background: rgba(255, 250, 244, 0.92); backdrop-filter: blur(1.5px); }
+    .navbar-lux { background: rgba(255, 248, 240, 0.96); backdrop-filter: blur(12px); padding: 18px 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #f0dfd2; position: sticky; top: 0; z-index: 100; }
+    .logo-fresh { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, #bc7a5a, #9b5e42, #b46a48); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { text-decoration: none; font-weight: 500; color: #5c3e2e; transition: 0.2s; cursor: pointer; }
     .nav-links a:hover { color: #c26e4a; }
-
-    .search-box {
-      display: flex;
-      align-items: center;
-      background: white;
-      border-radius: 40px;
-      padding: 6px 16px;
-      border: 1px solid #f5d5c6;
-    }
-
-    .search-box input {
-      border: none;
-      background: transparent;
-      padding: 8px;
-      outline: none;
-      font-size: 0.9rem;
-      width: 160px;
-    }
-
-    .cart-wishlist {
-      display: flex;
-      gap: 18px;
-      font-size: 1.3rem;
-      cursor: pointer;
-    }
-
-    .cart-wishlist i { color: #b96f4d; transition: 0.2s; }
-    .cart-wishlist i:hover { transform: scale(1.05); }
-
-    /* FULL SCREEN HERO WITH FIXED BACKGROUND (does not scroll) */
-    .full-hero {
-      height: 100vh;
-      min-height: 700px;
-      background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=1600');
-      background-size: cover;
-      background-position: center 35%;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero-content-full {
-      max-width: 850px;
-      padding: 30px;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(3px);
-      border-radius: 60px;
-      animation: fadeUp 1s ease;
-    }
-
-    .hero-content-full .brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 4.5rem;
-      font-weight: 800;
-      color: #fff2e8;
-      text-shadow: 3px 3px 20px rgba(0,0,0,0.5);
-    }
-
-    .hero-content-full .tagline {
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: #ffefe5;
-      margin: 16px 0;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .btn-primary, .btn-outline-gold {
-      padding: 14px 38px;
-      border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.25s;
-      border: none;
-      font-size: 1rem;
-    }
-    .btn-primary { background: #c26e4a; color: white; box-shadow: 0 6px 14px rgba(0,0,0,0.3); }
-    .btn-primary:hover { background: #a85938; transform: translateY(-2px); }
-    .btn-outline-gold { background: transparent; border: 2px solid #c26e4a; color: white; backdrop-filter: blur(4px); }
-    .btn-outline-gold:hover { background: #c26e4a; color: white; }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-
-    /* Section Titles */
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      text-align: center;
-      margin: 70px 0 30px;
-      color: #a36243;
-    }
-    .section-title span { font-family: 'Dancing Script', cursive; color: #d4af7a; font-size: 1.8rem; display: block; }
-
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
-
-    /* Category Tabs */
-    .category-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-    .tab-btn {
-      background: #f8ede6;
-      border: none;
-      padding: 10px 24px;
-      border-radius: 60px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s;
-      color: #5c3e2e;
-    }
-    .tab-btn.active, .tab-btn:hover {
-      background: #c26e4a;
-      color: white;
-    }
-
-    /* Product Grid */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 35px;
-      margin: 30px 0;
-    }
-    .product-card {
-      background: white;
-      border-radius: 36px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-      border: 1px solid #f8e0d4;
-    }
-    .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
-    .product-img { height: 240px; background-size: cover; background-position: center; transition: 0.4s; }
+    .cart-icon { background: #f8ede6; padding: 8px 20px; border-radius: 60px; cursor: pointer; font-size: 1.2rem; font-weight: 600; transition: 0.2s; display: flex; align-items: center; gap: 8px; }
+    .cart-icon:hover { background: #c26e4a; color: white; }
+    .hero-full-fixed { position: relative; min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; text-align: center; background-image: url('https://images.pexels.com/photos/1860203/pexels-photo-1860203.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center 35%; background-attachment: fixed; background-repeat: no-repeat; isolation: isolate; }
+    .hero-full-fixed::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30,20,15,0.55) 0%, rgba(0,0,0,0.45) 100%); z-index: 0; }
+    .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+    .shee-logo { font-family: 'Playfair Display', serif; font-size: 5.2rem; font-weight: 700; color: #fffcf5; text-shadow: 0 6px 14px rgba(0,0,0,0.4); margin-bottom: 20px; }
+    .elegant-tag { font-family: 'Quicksand', sans-serif; font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; color: #fff0e0; background: rgba(0,0,0,0.45); backdrop-filter: blur(4px); display: inline-block; padding: 8px 32px; border-radius: 60px; margin-bottom: 28px; font-weight: 500; }
+    .hero-description { max-width: 700px; margin: 20px auto; font-size: 1.25rem; color: #fef1e6; text-shadow: 0 2px 5px rgba(0,0,0,0.3); line-height: 1.7; font-weight: 500; }
+    .btn-primary { background: #c26e4a; border: none; padding: 14px 38px; border-radius: 60px; font-weight: 600; font-size: 1rem; color: white; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: inline-flex; align-items: center; gap: 8px; }
+    .btn-outline { background: transparent; border: 2px solid #fff2e6; padding: 14px 38px; border-radius: 60px; font-weight: 600; font-size: 1rem; color: #fff2e6; cursor: pointer; transition: 0.2s; backdrop-filter: blur(2px); }
+    .btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .section-title { text-align: center; margin: 70px 0 40px; }
+    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #7a4c34; }
+    .section-title span { font-family: 'Quicksand', sans-serif; font-size: 1rem; letter-spacing: 2px; background: #f2e3da; display: inline-block; padding: 6px 20px; border-radius: 60px; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 30px; }
+    .category-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 45px; }
+    .tab-btn { background: #f3e7e0; border: none; padding: 10px 22px; border-radius: 60px; font-weight: 600; font-size: 0.85rem; color: #5c3e2e; cursor: pointer; transition: 0.2s; }
+    .tab-btn.active, .tab-btn:hover { background: #c26e4a; color: white; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 35px; margin: 40px 0; }
+    .product-card { background: white; border-radius: 32px; overflow: hidden; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.03); border: 1px solid #f0dfd2; }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12); }
+    .product-img { height: 220px; background-size: cover; background-position: center; }
     .product-info { padding: 20px; }
-    .product-title { font-weight: 700; font-size: 1.2rem; }
-    .price { color: #c26e4a; font-weight: 700; font-size: 1.1rem; margin: 8px 0; }
-    .rating { color: #ffb347; margin: 6px 0; font-size: 0.9rem; }
-    .add-to-cart { background: #f5e2d8; border: none; padding: 10px 0; width: 100%; border-radius: 60px; font-weight: 600; cursor: pointer; transition: 0.2s; margin-top: 12px; }
-    .add-to-cart:hover { background: #c26e4a; color: white; }
-    .badge { background: #d4af7a; color: white; padding: 4px 12px; border-radius: 40px; font-size: 0.7rem; display: inline-block; margin-bottom: 8px; }
-
-    /* Toast Notification */
-    .toast-notification {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: #2c211c;
-      color: #fae7de;
-      padding: 14px 32px;
-      border-radius: 60px;
-      font-weight: 500;
-      z-index: 1200;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-      opacity: 0;
-      pointer-events: none;
-      font-size: 0.95rem;
-      white-space: nowrap;
-    }
-    .toast-notification.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-    }
-
-    /* FLOATING BUTTONS - Back to Top (Left) + WhatsApp (Right) */
-    .floating-buttons {
-      position: fixed;
-      bottom: 30px;
-      left: 0;
-      right: 0;
-      pointer-events: none;
-      z-index: 999;
-    }
-    .float-left {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      pointer-events: auto;
-    }
-    .float-right {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      pointer-events: auto;
-    }
-    .back-to-top, .whatsapp-float {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-      border: none;
-      font-size: 26px;
-    }
-    .back-to-top {
-      background: #c26e4a;
-      color: white;
-    }
-    .back-to-top:hover {
-      background: #a85938;
-      transform: scale(1.08);
-    }
-    .whatsapp-float {
-      background: #25D366;
-      color: white;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.08);
-      background: #20b859;
-    }
-
-    /* Features */
-    .features-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      background: #fff5ef;
-      border-radius: 70px;
-      padding: 50px 30px;
-      margin: 50px 0;
-    }
-    .feature { text-align: center; flex: 1; min-width: 160px; }
-    .feature i { font-size: 2.5rem; color: #d4af7a; margin-bottom: 16px; }
-
-    /* Offer Banner */
-    .offer-banner {
-      background: linear-gradient(115deg, #fbe6db, #f7d9cb);
-      border-radius: 60px;
-      padding: 50px;
-      text-align: center;
-      margin: 50px 0;
-    }
-    .coupon { background: white; display: inline-block; padding: 12px 36px; border-radius: 60px; font-weight: bold; letter-spacing: 2px; margin-top: 20px; border: 1px dashed #d4af7a; }
-
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 24px;
-      margin: 40px 0;
-    }
-    .gallery-item { border-radius: 32px; overflow: hidden; height: 260px; cursor: pointer; }
+    .product-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 5px; }
+    .badge { background: #f0e0d6; display: inline-block; padding: 4px 12px; border-radius: 60px; font-size: 0.65rem; font-weight: 600; margin-bottom: 10px; }
+    .story-icon { font-size: 1rem; color: #c26e4a; background: #fef2ea; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 60px; margin: 8px 0; cursor: pointer; transition: 0.2s; width: fit-content; font-weight: 500; }
+    .story-icon i { font-size: 0.9rem; }
+    .story-icon:hover { background: #c26e4a; color: white; transform: scale(1.02); }
+    .weight-select { margin: 12px 0; }
+    .weight-select select { background: #fefaf5; border: 1px solid #eedbcb; padding: 8px 12px; border-radius: 60px; width: 100%; font-weight: 500; cursor: pointer; }
+    .price-dynamic { font-weight: 700; font-size: 1.2rem; color: #c26e4a; margin: 10px 0; }
+    .add-to-cart-btn { background: #c26e4a; border: none; padding: 10px 16px; border-radius: 60px; font-weight: 600; font-size: 0.9rem; color: white; cursor: pointer; transition: all 0.2s ease; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 45px; background: #fff8f2; border-radius: 70px; padding: 50px 30px; margin: 60px 0; }
+    .feature { text-align: center; flex: 1; min-width: 150px; }
+    .feature i { font-size: 2.2rem; color: #c28a5c; margin-bottom: 16px; }
+    .carousel-section { margin: 40px 0 60px; border-radius: 48px; overflow: hidden; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2); }
+    .carousel-container { position: relative; width: 100%; height: 420px; overflow: hidden; }
+    .carousel-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s; z-index: 1; }
+    .carousel-slide.active { opacity: 1; z-index: 2; }
+    .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+    .carousel-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(46,36,31,0.85) 0%, rgba(46,36,31,0.3) 70%, transparent 100%); padding: 35px 30px; color: white; text-align: center; z-index: 3; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; margin: 40px 0; }
+    .gallery-item { border-radius: 28px; overflow: hidden; height: 250px; cursor: pointer; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-    .gallery-item:hover img { transform: scale(1.08); }
-
-    /* Footer */
-    .footer {
-      background: #2c211c;
-      color: #fae7de;
-      padding: 60px 0 30px;
-      margin-top: 70px;
-    }
-    .footer-grid { display: flex; flex-wrap: wrap; gap: 50px; justify-content: space-between; }
+    .footer-elegant { background: #f7ede6; color: #4d3427; padding: 60px 0 30px; margin-top: 80px; border-top: 1px solid #e7d5ca; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
     .footer-col { flex: 1; min-width: 180px; }
-    .footer-col h4 { font-family: 'Playfair Display'; margin-bottom: 20px; color: #e7bc9e; }
-    .footer-col input { padding: 12px; border-radius: 60px; border: none; width: 100%; margin: 10px 0; }
-    .footer-col a { color: #f0cfbe; text-decoration: none; }
-    .footer-col a:hover { color: #e7bc9e; }
-
-    /* Cart Sidebar */
-    .cart-sidebar {
-      position: fixed;
-      top: 0;
-      right: -450px;
-      width: 400px;
-      height: 100%;
-      background: white;
-      box-shadow: -5px 0 25px rgba(0,0,0,0.1);
-      z-index: 1100;
-      transition: 0.3s;
-      padding: 30px;
-      overflow-y: auto;
-    }
+    .footer-col h4 { font-family: 'Playfair Display', serif; margin-bottom: 20px; color: #9b5e42; }
+    .cart-sidebar { position: fixed; top: 0; right: -450px; width: 400px; height: 100%; background: white; z-index: 1100; transition: 0.3s; padding: 30px; overflow-y: auto; box-shadow: -5px 0 25px rgba(0,0,0,0.08); }
     .cart-sidebar.open { right: 0; }
-    .cart-item { display: flex; gap: 12px; margin: 20px 0; border-bottom: 1px solid #f3e0d6; padding-bottom: 12px; align-items: center; }
-    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1050; display: none; }
-
-    @media (max-width: 900px) {
-      .full-hero { background-attachment: scroll; min-height: 600px; }
-      .hero-content-full .brand { font-size: 2.8rem; }
-      .hero-content-full .tagline { font-size: 1.3rem; }
-      .navbar { padding: 16px 20px; flex-direction: column; }
-      .container { padding: 0 20px; }
-      .toast-notification { white-space: normal; text-align: center; width: 80%; font-size: 0.85rem; }
-      .float-left { left: 15px; bottom: 20px; }
-      .float-right { right: 15px; bottom: 20px; }
-      .back-to-top, .whatsapp-float { width: 48px; height: 48px; font-size: 22px; }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 1050; display: none; }
+    .float-wa { position: fixed; bottom: 30px; right: 30px; z-index: 999; }
+    .float-top { position: fixed; bottom: 30px; left: 30px; z-index: 999; }
+    .whatsapp-btn, .top-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #25D366; color: white; font-size: 26px; cursor: pointer; border: none; box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
+    .top-btn { background: #c26e4a; }
+    .toast-msg { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: #2e241f; color: #fae7de; padding: 12px 28px; border-radius: 60px; z-index: 1200; transition: 0.2s; opacity: 0; pointer-events: none; }
+    .toast-msg.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    .story-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 1500; align-items: center; justify-content: center; }
+    .story-modal-content { background: #fffaf5; max-width: 550px; width: 90%; border-radius: 48px; overflow: hidden; box-shadow: 0 30px 40px rgba(0,0,0,0.3); animation: fadeUp 0.3s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .story-modal-img { width: 100%; height: 280px; background-size: cover; background-position: center; }
+    .story-modal-text { padding: 28px 28px 36px; text-align: center; }
+    .story-modal-text h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #7a4c34; margin-bottom: 12px; }
+    .story-modal-text p { font-size: 1rem; line-height: 1.5; color: #4a3427; margin-bottom: 20px; }
+    .story-modal-close { background: #c26e4a; border: none; padding: 12px 28px; border-radius: 60px; color: white; font-weight: 600; cursor: pointer; transition: 0.2s; }
+    .story-modal-close:hover { background: #9b5236; }
+    @media (max-width:800px) {
+      .navbar-lux { flex-direction: column; padding: 16px 20px; }
+      .shee-logo { font-size: 3rem; }
+      .hero-full-fixed { background-attachment: scroll; }
       .cart-sidebar { width: 100%; right: -100%; }
+      .carousel-container { height: 320px; }
     }
   </style>
 </head>
 <body>
+<div class="global-bg-texture"></div>
+<div class="content-foreground">
+  <nav class="navbar-lux">
+    <div class="logo-fresh">Shee's Kitchen</div>
+    <div class="nav-links"><a href="#home">Home</a><a href="#shop">Full Menu</a><a href="#gallery">Gallery</a><a id="customCakeNavBtn">✨ Custom Cake</a></div>
+    <div class="cart-icon" id="cartIcon"><i class="fas fa-shopping-bag"></i> <span id="cartCount">0</span></div>
+  </nav>
 
-<!-- Toast Notification -->
-<div id="toastMsg" class="toast-notification">✨ Added to cart ✨</div>
-
-<!-- Sticky Navbar -->
-<nav class="navbar">
-  <a href="#" class="logo">Shee's Kitchen</a>
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search cakes...">
-    <i class="fas fa-search"></i>
-  </div>
-  <div class="cart-wishlist">
-    <i class="far fa-heart" id="wishlistIcon"></i>
-    <i class="fas fa-shopping-cart" id="cartIcon"></i>
-  </div>
-</nav>
-
-<!-- FULL SCREEN HERO with fixed background -->
-<section id="home" class="full-hero">
-  <div class="hero-content-full">
-    <div class="brand">Shee's Kitchen</div>
-    <div class="tagline">Indulge in Sweet Perfection</div>
-    <p style="font-size: 1.2rem; color: #fff2e8; margin-bottom: 20px;">Freshly baked happiness, crafted with love.</p>
-    <div class="hero-buttons">
-      <button class="btn-primary" id="heroOrderBtn">Order Now</button>
-      <button class="btn-outline-gold" id="exploreMenuBtn">Explore Menu</button>
+  <section id="home" class="hero-full-fixed">
+    <div class="hero-content">
+      <div class="shee-logo">Shee's Kitchen</div>
+      <div class="elegant-tag">✦ artisan pâtisserie · juja ✦</div>
+      <div class="hero-description"><strong>Signature stories baked fresh daily.</strong><br>From our heart to your table — each creation carries a memory, a flavor, a moment of pure bliss.</div>
+      <div class="btn-group"><button class="btn-primary" id="heroOrderBtn"><i class="fas fa-shopping-cart"></i> Order Now</button><button class="btn-outline" id="exploreBtn">Explore Signature Menu</button></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="container">
-  <!-- Shop Section -->
-  <div id="shop" class="section-title"><span>Our Sweet Collections</span>Shop by Occasion & Flavor</div>
-  
-  <div class="category-tabs">
-    <button class="tab-btn active" data-cat="all">All Cakes</button>
-    <button class="tab-btn" data-cat="event">🎂 Event Cakes</button>
-    <button class="tab-btn" data-cat="flavor">🍰 Cake Types</button>
-  </div>
-
-  <div class="products-grid" id="productsGrid"></div>
-
-  <!-- Why Choose Us -->
-  <div class="features-grid">
-    <div class="feature"><i class="fas fa-seedling"></i><h3>Freshly Baked Daily</h3><p>Morning batches, pure love</p></div>
-    <div class="feature"><i class="fas fa-medal"></i><h3>Premium Ingredients</h3><p>Belgian chocolate, real butter</p></div>
-    <div class="feature"><i class="fas fa-palette"></i><h3>Custom Designs</h3><p>Your vision, our artistry</p></div>
-    <div class="feature"><i class="fas fa-shipping-fast"></i><h3>Fast Delivery</h3><p>Same-day in Nairobi</p></div>
-  </div>
-
-  <!-- Special Offers -->
-  <div class="offer-banner">
-    <h2 style="font-family: 'Playfair Display';">🍰 Sweet Deals Just for You 🍰</h2>
-    <div class="coupon">✨ 20% OFF on first order ✨ Code: SHEE20</div>
-    <p style="margin-top: 20px;">Limited time — indulge in luxury at a steal!</p>
-  </div>
-
-  <!-- Gallery Section -->
-  <div id="gallery" class="section-title"><span>Sweet Memories</span>Instagram Gallery</div>
-  <div class="gallery-grid" id="galleryGrid"></div>
-</div>
-
-<!-- Footer -->
-<footer class="footer" id="contact">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>Shee's Kitchen</h4>
-        <p>Luxury artisan bakery, crafting happiness since 2018.</p>
-        <div class="social-icons" style="margin-top: 16px;">
-          <i class="fab fa-instagram" style="font-size: 1.6rem; margin-right: 15px; cursor: pointer;"></i>
-          <i class="fab fa-facebook" style="font-size: 1.6rem; margin-right: 15px; cursor: pointer;"></i>
-          <i class="fab fa-pinterest" style="font-size: 1.6rem; cursor: pointer;"></i>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <p><a href="#home">Home</a></p>
-        <p><a href="#shop">Shop</a></p>
-        <p><a href="#gallery">Gallery</a></p>
-        <p><a href="#contact">Contact</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><i class="fas fa-map-marker-alt"></i> 123 Blush Lane, Nairobi</p>
-        <p><i class="fas fa-phone"></i> +254 716 180 343</p>
-        <p><i class="fas fa-envelope"></i> hello@sheeskitchen.com</p>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <p>Get sweet updates & offers</p>
-        <input type="email" placeholder="Your email" id="newsEmail">
-        <button class="btn-primary" style="padding: 10px 20px; margin-top: 8px;" id="newsBtn">Subscribe</button>
-      </div>
+    <div id="shop" class="section-title"><h2>🍰 Complete Artisan Collection</h2><span>KSh 1,500/kg · tap the 📘 icon to discover each story</span></div>
+    <div class="category-tabs" id="categoryTabs"></div>
+    <div class="products-grid" id="productsGrid"></div>
+
+    <div class="features">
+      <div class="feature"><i class="fas fa-hand-sparkles"></i><h3>Handcrafted Stories</h3><p>Each cake tells a tale</p></div>
+      <div class="feature"><i class="fas fa-weight-hanging"></i><h3>1500/kg</h3><p>Fair & transparent</p></div>
+      <div class="feature"><i class="fas fa-motorcycle"></i><h3>Delivery Juja/NBO</h3><p>Same day available</p></div>
+      <div class="feature"><i class="fas fa-palette"></i><h3>Bespoke Studio</h3><p>Your vision, perfected</p></div>
     </div>
-    <div style="text-align: center; margin-top: 50px;">© 2025 Shee's Kitchen — Indulge in Sweet Perfection</div>
+
+    <div class="carousel-section"><div class="carousel-container" id="carouselContainer"><div class="carousel-slide active"><img src="https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cake"></div><div class="carousel-slide"><img src="https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Wedding"></div><div class="carousel-slide"><img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Chocolate"></div><div class="carousel-slide"><img src="https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Birthday"></div><div class="carousel-overlay"><h3 id="carouselTitle">Artisan Masterpiece</h3><p id="carouselDesc">Bespoke designs tailored to your celebration.</p></div><div class="carousel-dots" id="carouselDots"></div></div></div>
+
+    <div id="gallery" class="section-title"><h2>Sweet Gallery</h2><span>Instagram moments</span></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
   </div>
-</footer>
 
-<!-- FLOATING BUTTONS: Back to Top (Left) + WhatsApp (Right) -->
-<div class="float-left">
-  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-</div>
-<div class="float-right">
-  <button class="whatsapp-float" id="whatsappFloatBtn" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </button>
+  <footer class="footer-elegant"><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Shee's Kitchen</h4><p>Luxury artisan bakery · Juja, Kenya</p><div class="social-icons"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-pinterest"></i></div></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-map-marker-alt"></i> Juja (near Juja City Mall)</p><p><i class="fas fa-phone-alt"></i> 0716 180 343</p><p><i class="fas fa-envelope"></i> hello@sheeskitchen.com</p></div><div class="footer-col"><h4>Quick Links</h4><p><a href="#home">Home</a></p><p><a href="#shop">Full Menu</a></p><p><a href="#gallery">Gallery</a></p><p><a id="customCakeFooterBtn">Custom Cake</a></p></div><div class="footer-col"><h4>Newsletter</h4><input type="email" id="newsEmail" placeholder="Your email" style="padding:12px; border-radius:60px; border:none; width:100%; margin:8px 0;"><button class="btn-primary" id="newsBtn" style="padding:10px 20px;">Subscribe</button></div></div><div class="copyright">© 2025 Shee's Kitchen — Signature stories & handcrafted love · KSh 1,500/kg</div></div></footer>
 </div>
 
-<!-- Cart Sidebar -->
+<!-- Story Popup Modal -->
+<div id="storyModal" class="story-modal">
+  <div class="story-modal-content">
+    <div id="storyModalImg" class="story-modal-img"></div>
+    <div class="story-modal-text">
+      <h3 id="storyModalTitle"></h3>
+      <p id="storyModalDesc"></p>
+      <button class="story-modal-close" id="closeStoryModalBtn">Close & Keep Exploring ❤️</button>
+    </div>
+  </div>
+</div>
+
+<div class="float-top"><button class="top-btn" id="backToTop"><i class="fas fa-arrow-up"></i></button></div>
+<div class="float-wa"><button class="whatsapp-btn" id="whatsappFloat"><i class="fab fa-whatsapp"></i></button></div>
 <div class="overlay" id="cartOverlay"></div>
-<div class="cart-sidebar" id="cartSidebar">
-  <h3>Your Cart 🛒</h3>
-  <div id="cartItemsList"></div>
-  <div id="cartTotal" style="font-weight: bold; margin: 20px 0;"></div>
-  <button class="btn-primary" id="checkoutBtn" style="width:100%;">Checkout</button>
-  <button id="closeCartBtn" style="margin-top: 12px; background: #e7cfc2; border: none; padding: 8px; width:100%; border-radius:40px; cursor: pointer;">Close</button>
-</div>
+<div class="cart-sidebar" id="cartSidebar"><h3>Your Bag 🛍️</h3><div id="cartItemsList"></div><div id="cartTotal"></div><button class="btn-primary" id="checkoutBtn" style="width:100%;">Proceed to Order</button><button id="closeCartBtn" style="margin-top:12px; background:#f3e7e0; border:none; padding:12px; width:100%; border-radius:60px;">Close</button></div>
+<div id="customModal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter: blur(6px); z-index:1300; align-items:center; justify-content:center;" onclick="if(event.target===this) this.style.display='none'"><div style="background: white; max-width:500px; width:90%; border-radius:48px; padding:32px; text-align:center;"><h3>✨ Design Your Dream Cake</h3><p>Pricing: KSh 1,500/kg</p><input type="text" id="customName" placeholder="Your name" style="width:100%; margin:12px 0; padding:14px; border-radius:60px;"><input type="text" id="customOccasion" placeholder="Occasion" style="width:100%; margin:12px 0; padding:14px; border-radius:60px;"><select id="customWeight" style="width:100%; margin:12px 0; padding:14px; border-radius:60px;"><option value="1">1 kg (1,500 KSh)</option><option value="1.5">1.5 kg (2,250 KSh)</option><option value="2">2 kg (3,000 KSh)</option><option value="2.5">2.5 kg (3,750 KSh)</option><option value="3">3 kg (4,500 KSh)</option><option value="4">4 kg (6,000 KSh)</option><option value="5">5 kg (7,500 KSh)</option></select><textarea id="customNotes" rows="2" placeholder="Flavor, design, colors..." style="width:100%; margin:12px 0; padding:14px; border-radius:28px;"></textarea><button class="btn-primary" id="sendCustomInquiry" style="width:100%;">Request via WhatsApp</button><button id="closeModalBtn" style="background:transparent; border:none; margin-top:12px;">Close</button></div></div>
+<div id="toastMsg" class="toast-msg">✨ Added to cart</div>
 
 <script>
-  // ==================== PRODUCT DATA WITH KES PRICES ====================
-  const eventCakes = [
-    { id: 1, name: "Wedding Cake", category: "event", price: 15600, rating: 4.9, image: "https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "✨ Wedding Special" },
-    { id: 2, name: "Birthday Cake", category: "event", price: 7150, rating: 4.8, image: "https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🎂 Birthday" },
-    { id: 3, name: "Engagement Cake", category: "event", price: 11050, rating: 4.9, image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "💍 Engagement" },
-    { id: 4, name: "Anniversary Cake", category: "event", price: 11700, rating: 4.8, image: "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "❤️ Anniversary" },
-    { id: 5, name: "Baby Shower Cake", category: "event", price: 8450, rating: 4.7, image: "https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍼 Baby Shower" },
-    { id: 6, name: "Gender Reveal Cake", category: "event", price: 9100, rating: 4.8, image: "https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🎀 Reveal" },
-    { id: 7, name: "Graduation Cake", category: "event", price: 9750, rating: 4.8, image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🎓 Graduation" },
-    { id: 8, name: "Corporate Event Cake", category: "event", price: 14300, rating: 4.9, image: "https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🏢 Corporate" },
-    { id: 9, name: "Bridal Shower Cake", category: "event", price: 10400, rating: 4.9, image: "https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "👰 Bridal" },
-    { id: 10, name: "Retirement Cake", category: "event", price: 10140, rating: 4.7, image: "https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🎉 Retirement" }
-  ];
-
-  const flavorCakes = [
-    { id: 11, name: "Chocolate Truffle Cake", category: "flavor", price: 6240, rating: 4.9, image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "⭐ Bestseller" },
-    { id: 12, name: "Red Velvet Cake", category: "flavor", price: 5850, rating: 4.8, image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🌹 Classic" },
-    { id: 13, name: "Vanilla Buttercream Cake", category: "flavor", price: 5200, rating: 4.7, image: "https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "✨ Vanilla Dream" },
-    { id: 14, name: "Black Forest Cake", category: "flavor", price: 6760, rating: 4.9, image: "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍒 Black Forest" },
-    { id: 15, name: "White Forest Cake", category: "flavor", price: 7020, rating: 4.8, image: "https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🤍 White Forest" },
-    { id: 16, name: "Fruit Cake", category: "flavor", price: 5980, rating: 4.6, image: "https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍇 Fruit Medley" },
-    { id: 17, name: "Carrot Cake", category: "flavor", price: 5720, rating: 4.7, image: "https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🥕 Carrot Spice" },
-    { id: 18, name: "Cheesecake", category: "flavor", price: 6500, rating: 4.9, image: "https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍰 Creamy" },
-    { id: 19, name: "Coffee Mocha Cake", category: "flavor", price: 6370, rating: 4.8, image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "☕ Mocha" },
-    { id: 20, name: "Lemon Drizzle Cake", category: "flavor", price: 5460, rating: 4.7, image: "https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&w=400", badge: "🍋 Zesty Lemon" }
-  ];
-
-  const allProducts = [...eventCakes, ...flavorCakes];
+  const PER_KG = 1500;
   let cart = [];
   let currentCategory = "all";
 
-  function showToast(message) {
-    const toast = document.getElementById("toastMsg");
-    toast.textContent = message || "✨ Added to cart ✨";
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 2000);
+  // ==================== ENHANCED CAKE DATABASE with FULL STORIES & IMAGES ====================
+  const allProducts = [
+    // === SHEE'S SIGNATURE COLLECTION (with stories) ===
+    { id:101, name:"Shee’s Classic Vanilla Dream", category:"signature", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"✨ Signature", story:"Madagascar bourbon vanilla & fluffy clouds of buttercream — the dream that started it all. Every layer whispers elegance, baked with heirloom vanilla beans." },
+    { id:102, name:"Signature Chocolate Indulgence", category:"signature", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Decadent", story:"Deep dark cocoa ganache, layered with velvet fudge. A chocoholic's pilgrimage. Topped with chocolate shards and a silky finish." },
+    { id:103, name:"Shee’s Red Velvet Royale", category:"signature", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"👑 Royale", story:"Crimson elegance meets cream cheese silk. Wrapped in whispers of cocoa and a touch of buttermilk — royalty on a plate." },
+    { id:104, name:"Signature Caramel Crunch Cake", category:"signature", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍯 Crunch", story:"Salted caramel drip, honeycomb brittle & buttery sponge — pure nostalgia. Inspired by grandmother's Sunday dessert table." },
+    { id:105, name:"Shee’s Tropical Delight (Pineapple + Coconut)", category:"signature", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🌴 Tropical", story:"Sun-kissed pineapple curd, toasted coconut flakes, and a breeze of paradise. One bite and you're on the Kenyan coast." },
+    { id:106, name:"Chocolate Fudge Supreme", category:"signature", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Supreme", story:"Molten fudge core, triple chocolate layers — for the true connoisseur. An explosion of richness in every forkful." },
+    
+    // Fresh Cream Cakes
+    { id:201, name:"Strawberry Fresh Cream Cake", category:"fresh-cream", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍓 Fresh", story:"Light whipped cream & fresh strawberries — airy delight. A summer breeze captured in a cake." },
+    { id:202, name:"Mixed Fruit Fresh Cream Cake", category:"fresh-cream", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍍 Fruity", story:"Tropical fruit melody in every spoonful. Layers of kiwi, mango, and berries." },
+    { id:203, name:"Mango Cream Cake", category:"fresh-cream", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🥭 Mango", story:"Juicy mango layers, sunshine in a slice. Kenyan mangoes at their peak." },
+    { id:204, name:"Blueberry Cream Cake", category:"fresh-cream", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🫐 Berries", story:"Blueberry compote swirls meet delicate cream. Antioxidant-rich and gorgeous." },
+    
+    // Chocolate Lovers Collection
+    { id:301, name:"Triple Chocolate Cake", category:"chocolate-lovers", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Triple", story:"Dark, milk & white chocolate harmony. Three layers of chocolate bliss." },
+    { id:302, name:"Dark Chocolate Truffle Cake", category:"chocolate-lovers", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Truffle", story:"Rich ganache, silky truffle texture. Hand-rolled truffles on top." },
+    { id:303, name:"KitKat Chocolate Cake", category:"chocolate-lovers", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Crunch", story:"Crunchy KitKat border & chocolate heaven. A playful crowd-pleaser." },
+    
+    // African-Inspired
+    { id:401, name:"Coconut & Palm Sugar Cake", category:"african", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🌴 Local", story:"Traditional palm sugar, fresh coconut — Kenyan roots. An ancestral recipe revived." },
+    { id:402, name:"Chai-Spiced Cake", category:"african", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"☕ Chai", story:"Cardamom, cinnamon, cloves — warmth in every crumb. Perfect with afternoon tea." },
+    { id:403, name:"Passion Fruit Cake", category:"african", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"✨ Tangy", story:"Zesty passionfruit curd, a taste of Kenyan summer. Bright, bold, beautiful." },
+    
+    // Luxury Designer & Geode
+    { id:501, name:"Gold Leaf Elegance", category:"luxury", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"💎 Gold", story:"Edible gold leaf & marble fondant — for iconic moments. Pure opulence." },
+    { id:502, name:"Geode Crystal Cake", category:"luxury", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🔮 Geode", story:"Rock candy crystals, agate art — statement piece. Edible gemstone illusion." },
+    { id:503, name:"Minimalist Korean Cake", category:"luxury", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🌸 Korean", story:"Soft buttercream, minimalist elegance. Inspired by Seoul's chic bakeries." },
+    
+    // Number & Letter Cakes / Kids Character
+    { id:601, name:"Number Cake (0-9)", category:"number-letters", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🔢 Number", story:"Custom age numbers, decorated to theme. Make that milestone memorable." },
+    { id:602, name:"Alphabet Cake", category:"number-letters", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🔤 Letter", story:"Name initials or full word — playful & trendy. Spell out love." },
+    { id:603, name:"Unicorn Fantasy Cake", category:"kids", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🦄 Unicorn", story:"Rainbow swirls, magical horns, kid-approved. Dreams do come true." },
+    
+    // Bento & Mini Cakes (trendy)
+    { id:701, name:"Bento Cake (Personal 4\")", category:"bento-mini", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🎁 Bento", story:"Tiny lunchbox cake — single serve luxury. Instagram's favorite trend." },
+    { id:702, name:"Mini Duo Celebration Set", category:"bento-mini", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍰 Duo", story:"Two mini cakes, double the joy. Perfect for intimate celebrations." },
+    
+    // Cheesecake & Ice Cream Cakes
+    { id:801, name:"New York Cheesecake", category:"cheesecake", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🗽 Classic", story:"Dense, creamy, graham crust — pure bliss. The ultimate comfort dessert." },
+    { id:802, name:"Biscoff Cheesecake", category:"cheesecake", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍪 Biscoff", story:"Caramelized lotus spread & silky cheese. A cookie butter dream." },
+    { id:803, name:"Ice Cream Cake (Vanilla Choc)", category:"ice-cream", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍦 Frozen", story:"Layers of ice cream & cake — summer delight. Cool, creamy, irresistible." },
+    
+    // Social Media Trendy (Pinata, Pull-Up, Burn Away)
+    { id:901, name:"Pinata Surprise Cake", category:"trendy", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🎉 Pinata", story:"Candy-filled center, smashing excitement! Party in every slice." },
+    { id:902, name:"Money Pull Cake", category:"trendy", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"💰 Money Pull", story:"Pull out real cash notes (gift idea). The ultimate surprise gift." },
+    { id:903, name:"Hidden Message Cake", category:"trendy", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"💌 Secret", story:"Slice reveals a personalized greeting inside. Words from the heart." },
+    
+    // Corporate & Branding
+    { id:1001, name:"Corporate Logo Cake", category:"corporate", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🏢 Brand", story:"Edible logo print, company colors, milestone perfect. Impress your team." },
+    { id:1002, name:"Office Milestone Cake", category:"corporate", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🎯 Milestone", story:"Years of success celebrated with style. Raise a slice to achievements." },
+  ];
+
+  const categoryMap = [
+    { key:"all", label:"All Cakes" },
+    { key:"signature", label:"👑 Signature Stories" },
+    { key:"fresh-cream", label:"🍓 Fresh Cream" },
+    { key:"chocolate-lovers", label:"🍫 Chocolate Lovers" },
+    { key:"african", label:"🌍 African-Inspired" },
+    { key:"luxury", label:"💎 Luxury Designer" },
+    { key:"number-letters", label:"🔢 Number & Letters" },
+    { key:"kids", label:"🧸 Kids & Characters" },
+    { key:"bento-mini", label:"🎁 Bento & Mini" },
+    { key:"cheesecake", label:"🍰 Cheesecakes" },
+    { key:"ice-cream", label:"🍦 Ice Cream Cakes" },
+    { key:"trendy", label:"📱 Social Media Trendy" },
+    { key:"corporate", label:"🏢 Corporate" }
+  ];
+
+  function formatKES(amount) { return `KSh ${amount.toLocaleString()}`; }
+  function showToast(msg) { const t = document.getElementById("toastMsg"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2000); }
+
+  function openStoryModal(product) {
+    document.getElementById("storyModalTitle").innerText = product.name;
+    document.getElementById("storyModalDesc").innerHTML = `📖 ${product.story || "Handcrafted with love, perfect for your celebration."}<br><br>✨ Base price: KSh 1,500/kg — available in any size.`;
+    const imgDiv = document.getElementById("storyModalImg");
+    imgDiv.style.backgroundImage = `url('${product.image}')`;
+    imgDiv.style.backgroundSize = "cover";
+    imgDiv.style.backgroundPosition = "center";
+    document.getElementById("storyModal").style.display = "flex";
   }
 
-  function formatKES(price) {
-    return `KSh ${price.toLocaleString()}`;
+  function renderCategoryTabs() {
+    const container = document.getElementById("categoryTabs");
+    container.innerHTML = categoryMap.map(cat => `<button class="tab-btn ${cat.key === currentCategory ? 'active' : ''}" data-cat="${cat.key}">${cat.label}</button>`).join('');
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentCategory = btn.dataset.cat;
+        renderCategoryTabs();
+        renderProducts();
+      });
+    });
   }
 
-  function renderProducts(category = "all", searchTerm = "") {
-    let filtered = category === "all" ? allProducts : allProducts.filter(p => p.category === category);
-    if (searchTerm) {
-      filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
-    }
+  function renderProducts() {
+    let filtered = currentCategory === "all" ? allProducts : allProducts.filter(p => p.category === currentCategory);
     const grid = document.getElementById("productsGrid");
-    if (!grid) return;
+    if (filtered.length === 0) { grid.innerHTML = "<div style='text-align:center; grid-column:1/-1; padding:40px;'>✨ More artisan creations coming — contact us for bespoke orders!</div>"; return; }
     grid.innerHTML = filtered.map(p => `
-      <div class="product-card">
+      <div class="product-card" data-id="${p.id}">
         <div class="product-img" style="background-image:url('${p.image}')"></div>
         <div class="product-info">
-          ${p.badge ? `<div class="badge">${p.badge}</div>` : ""}
+          <div class="badge">${p.badge}</div>
           <div class="product-title">${p.name}</div>
-          <div class="price">${formatKES(p.price)}</div>
-          <div class="rating">${"★".repeat(Math.floor(p.rating))} ${p.rating}</div>
-          <button class="add-to-cart" data-id="${p.id}">Add to Cart</button>
+          <div class="story-icon" data-story-id="${p.id}"><i class="fas fa-book-open"></i> Read the story</div>
+          <div class="weight-select"><select class="kg-weight" data-id="${p.id}">${[1,1.5,2,2.5,3,3.5,4,5].map(w => `<option value="${w}">${w} kg</option>`).join('')}</select></div>
+          <div class="price-dynamic" data-price="${p.id}">${formatKES(PER_KG)}</div>
+          <button class="add-to-cart-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> Add to Cart</button>
         </div>
       </div>
     `).join('');
-    attachCartEvents();
-  }
 
-  function attachCartEvents() {
-    const buttons = document.querySelectorAll(".add-to-cart");
-    buttons.forEach(btn => {
-      const newBtn = btn.cloneNode(true);
-      btn.parentNode.replaceChild(newBtn, btn);
-      newBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const id = parseInt(newBtn.getAttribute("data-id"));
+    document.querySelectorAll(".story-icon").forEach(el => {
+      const pid = parseInt(el.dataset.storyId);
+      const product = allProducts.find(p => p.id === pid);
+      if(product) el.addEventListener("click", (e) => { e.stopPropagation(); openStoryModal(product); });
+    });
+
+    document.querySelectorAll(".kg-weight").forEach(select => {
+      const pid = parseInt(select.dataset.id);
+      const priceSpan = document.querySelector(`.price-dynamic[data-price="${pid}"]`);
+      const updatePrice = () => { const w = parseFloat(select.value); priceSpan.innerText = formatKES(w * PER_KG); };
+      select.addEventListener("change", updatePrice);
+      updatePrice();
+    });
+
+    document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const id = parseInt(btn.dataset.id);
         const product = allProducts.find(p => p.id === id);
-        if (product) {
-          cart.push({ ...product, cartId: Date.now() + Math.random() });
-          updateCartUI();
-          showToast(`🍰 ${product.name} added to cart!`);
-        }
+        const card = btn.closest(".product-card");
+        const weight = parseFloat(card.querySelector(".kg-weight").value);
+        cart.push({ ...product, weight, totalPrice: weight * PER_KG });
+        updateCartUI();
+        showToast(`🍰 ${product.name} (${weight}kg) added`);
       });
     });
   }
 
   function updateCartUI() {
     const cartDiv = document.getElementById("cartItemsList");
-    if (!cartDiv) return;
-    if (cart.length === 0) {
-      cartDiv.innerHTML = "<p style='text-align:center;'>Your cart is empty 🧁</p>";
-      document.getElementById("cartTotal").innerHTML = "";
-      return;
-    }
+    const totalSpan = document.getElementById("cartCount");
+    if (cart.length === 0) { cartDiv.innerHTML = "<p>Your bag is empty</p>"; document.getElementById("cartTotal").innerHTML = ""; totalSpan.innerText = "0"; return; }
     let total = 0;
     cartDiv.innerHTML = cart.map((item, idx) => {
-      total += item.price;
-      return `<div class="cart-item">
-        <img src="${item.image}" width="50" height="50" style="border-radius:20px; object-fit:cover">
-        <div style="flex:1;">
-          <strong>${item.name}</strong><br>
-          ${formatKES(item.price)}
-        </div>
-        <i class="fas fa-trash-alt" style="cursor:pointer; color:#c26e4a;" data-idx="${idx}"></i>
-      </div>`;
+      total += item.totalPrice;
+      return `<div style="display:flex; gap:12px; margin-bottom:16px;"><img src="${item.image}" width="55" height="55" style="border-radius:28px; object-fit:cover;"><div><strong>${item.name}</strong><br>${item.weight} kg · ${formatKES(item.totalPrice)}</div><i class="fas fa-trash-alt" style="cursor:pointer; color:#c26e4a; margin-left:auto;" data-idx="${idx}"></i></div>`;
     }).join('');
     document.getElementById("cartTotal").innerHTML = `<strong>Total: ${formatKES(total)}</strong>`;
-    
+    totalSpan.innerText = cart.length;
     document.querySelectorAll(".fa-trash-alt").forEach(trash => {
-      trash.addEventListener("click", (e) => {
-        const idx = parseInt(trash.getAttribute("data-idx"));
-        cart.splice(idx, 1);
-        updateCartUI();
-        showToast("🗑️ Item removed");
-      });
+      trash.addEventListener("click", (e) => { const idx = parseInt(trash.dataset.idx); cart.splice(idx,1); updateCartUI(); showToast("Removed"); });
     });
   }
 
-  // Gallery
-  const galleryImgs = [
-    "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500",
-    "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500",
-    "https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500",
-    "https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500",
-    "https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500",
-    "https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500"
-  ];
-  function renderGallery() {
-    const galleryHtml = galleryImgs.map(img => `<div class="gallery-item"><img src="${img}" alt="cake"></div>`).join('');
-    document.getElementById("galleryGrid").innerHTML = galleryHtml;
-  }
+  // Gallery & Carousel (unchanged but functional)
+  const galleryImgs = ["https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500","https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500","https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500","https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500"];
+  function renderGallery() { document.getElementById("galleryGrid").innerHTML = galleryImgs.map(img => `<div class="gallery-item"><img src="${img}" alt="cake gallery"></div>`).join(''); }
+  const carouselItems = [{ title:"Signature Caramel Crunch", desc:"Buttery crunch & salted caramel." },{ title:"Geode Crystal Cake", desc:"Edible crystals & luxury design." },{ title:"Bento Mini Cakes", desc:"Trendy personal-sized delights." },{ title:"African-Inspired Chai", desc:"Warm spices & Kenyan soul." }];
+  let currentSlide = 0, autoInterval;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const titleEl = document.getElementById('carouselTitle');
+  const descEl = document.getElementById('carouselDesc');
+  function updateCarousel(index) { slides.forEach((s,i)=> i===index ? s.classList.add('active') : s.classList.remove('active')); titleEl.textContent = carouselItems[index].title; descEl.textContent = carouselItems[index].desc; document.querySelectorAll('.dot').forEach((dot,i)=> i===index ? dot.classList.add('active') : dot.classList.remove('active')); }
+  function nextSlide() { currentSlide = (currentSlide+1)%carouselItems.length; updateCarousel(currentSlide); }
+  function startAutoScroll() { if(autoInterval) clearInterval(autoInterval); autoInterval = setInterval(nextSlide,3000); }
+  function createDots() { const container = document.getElementById('carouselDots'); carouselItems.forEach((_,idx)=>{ const dot=document.createElement('button'); dot.classList.add('dot'); if(idx===0) dot.classList.add('active'); dot.addEventListener('click',()=>{ clearInterval(autoInterval); currentSlide=idx; updateCarousel(currentSlide); startAutoScroll(); }); container.appendChild(dot); }); }
+  createDots(); startAutoScroll(); updateCarousel(0);
+  document.querySelector('.carousel-container')?.addEventListener('mouseenter',()=>clearInterval(autoInterval));
+  document.querySelector('.carousel-container')?.addEventListener('mouseleave',startAutoScroll);
 
-  // Search
-  document.getElementById("searchInput")?.addEventListener("input", (e) => {
-    renderProducts(currentCategory, e.target.value);
-  });
-
-  // Category tabs
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentCategory = btn.getAttribute("data-cat");
-      renderProducts(currentCategory, document.getElementById("searchInput")?.value || "");
-    });
-  });
-
-  // Back to Top functionality
-  document.getElementById("backToTopBtn")?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  // WhatsApp Floating Button with number 0716 180 343
-  document.getElementById("whatsappFloatBtn")?.addEventListener("click", () => {
-    const phoneNumber = "254716180343"; // Kenya number without leading 0
-    const message = encodeURIComponent("Hello Shee's Kitchen! I'd like to order a delicious cake 🍰");
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-  });
-
-  // Cart Sidebar
-  const cartSidebar = document.getElementById("cartSidebar");
-  const overlay = document.getElementById("cartOverlay");
-  document.getElementById("cartIcon")?.addEventListener("click", () => {
-    cartSidebar.classList.add("open");
-    overlay.style.display = "block";
-    updateCartUI();
-  });
-  document.getElementById("closeCartBtn")?.addEventListener("click", () => {
-    cartSidebar.classList.remove("open");
-    overlay.style.display = "none";
-  });
-  overlay?.addEventListener("click", () => {
-    cartSidebar.classList.remove("open");
-    overlay.style.display = "none";
-  });
-  document.getElementById("checkoutBtn")?.addEventListener("click", () => {
-    if (cart.length === 0) {
-      showToast("Your cart is empty! Add some delicious cakes 🍰");
-      return;
-    }
-    alert("🎉 Thank you for your order! We'll contact you via WhatsApp within 30 minutes. 🎂");
-  });
-
-  // Hero & Newsletter
-  document.getElementById("heroOrderBtn")?.addEventListener("click", () => {
-    cartSidebar.classList.add("open");
-    overlay.style.display = "block";
-    updateCartUI();
-  });
-  document.getElementById("exploreMenuBtn")?.addEventListener("click", () => document.getElementById("shop").scrollIntoView({ behavior: "smooth" }));
-  document.getElementById("newsBtn")?.addEventListener("click", () => {
-    const email = document.getElementById("newsEmail")?.value;
-    if (email && email.includes("@")) {
-      showToast("📧 Subscribed! Sweet offers incoming.");
-      document.getElementById("newsEmail").value = "";
-    } else {
-      showToast("Please enter a valid email address");
-    }
-  });
-
-  // Initial render
-  renderProducts("all");
+  // Event listeners
+  document.getElementById("heroOrderBtn")?.addEventListener("click",()=>{ document.getElementById("cartSidebar").classList.add("open"); document.getElementById("cartOverlay").style.display="block"; updateCartUI(); });
+  document.getElementById("exploreBtn")?.addEventListener("click",()=>document.getElementById("shop").scrollIntoView({ behavior:"smooth" }));
+  document.getElementById("cartIcon")?.addEventListener("click",()=>{ document.getElementById("cartSidebar").classList.add("open"); document.getElementById("cartOverlay").style.display="block"; updateCartUI(); });
+  document.getElementById("closeCartBtn")?.addEventListener("click",()=>{ document.getElementById("cartSidebar").classList.remove("open"); document.getElementById("cartOverlay").style.display="none"; });
+  document.getElementById("cartOverlay")?.addEventListener("click",()=>{ document.getElementById("cartSidebar").classList.remove("open"); document.getElementById("cartOverlay").style.display="none"; });
+  document.getElementById("checkoutBtn")?.addEventListener("click",()=>{ if(cart.length===0) showToast("Your cart is empty"); else alert("🎉 Thank you! We'll contact you via WhatsApp within 30 minutes to confirm your order. 🎂"); });
+  document.getElementById("backToTop")?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+  document.getElementById("whatsappFloat")?.addEventListener("click",()=>window.open("https://wa.me/254716180343?text=Hello%20Shee's%20Kitchen!%20I'd%20like%20to%20order%20a%20cake%20🍰","_blank"));
+  document.getElementById("newsBtn")?.addEventListener("click",()=>{ const email=document.getElementById("newsEmail").value; if(email&&email.includes("@")){ showToast("Subscribed!"); document.getElementById("newsEmail").value=""; } else showToast("Valid email please"); });
+  const modal = document.getElementById("customModal");
+  document.getElementById("customCakeNavBtn")?.addEventListener("click",()=>modal.style.display="flex");
+  document.getElementById("customCakeFooterBtn")?.addEventListener("click",()=>modal.style.display="flex");
+  document.getElementById("closeModalBtn")?.addEventListener("click",()=>modal.style.display="none");
+  document.getElementById("sendCustomInquiry")?.addEventListener("click",()=>{ const name=document.getElementById("customName").value, occasion=document.getElementById("customOccasion").value, weight=document.getElementById("customWeight").value, notes=document.getElementById("customNotes").value; const msg=`*Custom Cake Request*%0A• Name: ${name||"Guest"}%0A• Occasion: ${occasion||"Celebration"}%0A• Weight: ${weight} kg (KSh ${weight*PER_KG})%0A• Notes: ${notes||"No details"}`; window.open(`https://wa.me/254716180343?text=${msg}`,"_blank"); modal.style.display="none"; });
+  
+  document.getElementById("closeStoryModalBtn")?.addEventListener("click", () => document.getElementById("storyModal").style.display = "none");
+  window.addEventListener("click", (e) => { if(e.target === document.getElementById("storyModal")) document.getElementById("storyModal").style.display = "none"; });
+  
+  renderCategoryTabs();
+  renderProducts();
   renderGallery();
 </script>
 </body>
