@@ -1,354 +1,286 @@
+Here is the complete HTML document with all cake varieties included and no emojis used anywhere in the text.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Shee's Kitchen | Artisan Cake Menu · Signature Collection · Juja</title>
+  <title>Shee's Kitchen | Complete Cake Collection</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #fef7f0; font-family: 'Inter', sans-serif; color: #2e241f; line-height: 1.5; scroll-behavior: smooth; }
-    .global-bg-texture { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -2; opacity: 0.1; pointer-events: none; }
-    .content-foreground { position: relative; z-index: 1; background: rgba(255, 250, 244, 0.92); backdrop-filter: blur(1.5px); }
-    .navbar-lux { background: rgba(255, 248, 240, 0.96); backdrop-filter: blur(12px); padding: 18px 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #f0dfd2; position: sticky; top: 0; z-index: 100; }
-    .logo-fresh { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, #bc7a5a, #9b5e42, #b46a48); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .nav-links { display: flex; gap: 32px; align-items: center; }
-    .nav-links a { text-decoration: none; font-weight: 500; color: #5c3e2e; transition: 0.2s; cursor: pointer; }
-    .nav-links a:hover { color: #c26e4a; }
-    .cart-icon { background: #f8ede6; padding: 8px 20px; border-radius: 60px; cursor: pointer; font-size: 1.2rem; font-weight: 600; transition: 0.2s; display: flex; align-items: center; gap: 8px; }
-    .cart-icon:hover { background: #c26e4a; color: white; }
-    .hero-full-fixed { position: relative; min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; text-align: center; background-image: url('https://images.pexels.com/photos/1860203/pexels-photo-1860203.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center 35%; background-attachment: fixed; background-repeat: no-repeat; isolation: isolate; }
-    .hero-full-fixed::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30,20,15,0.55) 0%, rgba(0,0,0,0.45) 100%); z-index: 0; }
-    .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
-    .shee-logo { font-family: 'Playfair Display', serif; font-size: 5.2rem; font-weight: 700; color: #fffcf5; text-shadow: 0 6px 14px rgba(0,0,0,0.4); margin-bottom: 20px; }
-    .elegant-tag { font-family: 'Quicksand', sans-serif; font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; color: #fff0e0; background: rgba(0,0,0,0.45); backdrop-filter: blur(4px); display: inline-block; padding: 8px 32px; border-radius: 60px; margin-bottom: 28px; font-weight: 500; }
-    .hero-description { max-width: 700px; margin: 20px auto; font-size: 1.25rem; color: #fef1e6; text-shadow: 0 2px 5px rgba(0,0,0,0.3); line-height: 1.7; font-weight: 500; }
-    .btn-primary { background: #c26e4a; border: none; padding: 14px 38px; border-radius: 60px; font-weight: 600; font-size: 1rem; color: white; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: inline-flex; align-items: center; gap: 8px; }
-    .btn-outline { background: transparent; border: 2px solid #fff2e6; padding: 14px 38px; border-radius: 60px; font-weight: 600; font-size: 1rem; color: #fff2e6; cursor: pointer; transition: 0.2s; backdrop-filter: blur(2px); }
-    .btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-    .section-title { text-align: center; margin: 70px 0 40px; }
-    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #7a4c34; }
-    .section-title span { font-family: 'Quicksand', sans-serif; font-size: 1rem; letter-spacing: 2px; background: #f2e3da; display: inline-block; padding: 6px 20px; border-radius: 60px; }
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 30px; }
-    .category-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 45px; }
-    .tab-btn { background: #f3e7e0; border: none; padding: 10px 22px; border-radius: 60px; font-weight: 600; font-size: 0.85rem; color: #5c3e2e; cursor: pointer; transition: 0.2s; }
-    .tab-btn.active, .tab-btn:hover { background: #c26e4a; color: white; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 35px; margin: 40px 0; }
-    .product-card { background: white; border-radius: 32px; overflow: hidden; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.03); border: 1px solid #f0dfd2; }
-    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12); }
-    .product-img { height: 220px; background-size: cover; background-position: center; }
-    .product-info { padding: 20px; }
-    .product-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 5px; }
-    .badge { background: #f0e0d6; display: inline-block; padding: 4px 12px; border-radius: 60px; font-size: 0.65rem; font-weight: 600; margin-bottom: 10px; }
-    .story-icon { font-size: 1rem; color: #c26e4a; background: #fef2ea; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 60px; margin: 8px 0; cursor: pointer; transition: 0.2s; width: fit-content; font-weight: 500; }
-    .story-icon i { font-size: 0.9rem; }
-    .story-icon:hover { background: #c26e4a; color: white; transform: scale(1.02); }
-    .weight-select { margin: 12px 0; }
-    .weight-select select { background: #fefaf5; border: 1px solid #eedbcb; padding: 8px 12px; border-radius: 60px; width: 100%; font-weight: 500; cursor: pointer; }
+    body { font-family: 'Inter', sans-serif; color: #2e241f; line-height: 1.5; background: #fef7f0; overflow-x: hidden; }
+    .global-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; opacity: 0.3; z-index: -2; }
+    .global-bg-primary { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://images.pexels.com/photos/1860203/pexels-photo-1860203.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; opacity: 0.7; z-index: -1; }
+    .content-foreground { position: relative; z-index: 1; }
+    .navbar-lux { background: rgba(255, 248, 240, 0.95); backdrop-filter: blur(12px); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 10px; }
+    .logo-fresh { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, #bc7a5a, #9b5e42); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links-desktop { display: flex; gap: 24px; }
+    .nav-links-desktop a, .nav-links-mobile a { text-decoration: none; font-weight: 500; color: #5c3e2e; cursor: pointer; }
+    .cart-icon { background: rgba(248, 237, 230, 0.9); padding: 6px 16px; border-radius: 60px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-weight: 600; }
+    .hamburger-btn { display: none; background: rgba(248, 237, 230, 0.9); border: none; font-size: 1.4rem; padding: 6px 12px; border-radius: 40px; cursor: pointer; }
+    .nav-links-mobile { position: fixed; top: 0; left: -100%; width: 70%; max-width: 260px; height: 100%; background: rgba(255, 251, 247, 0.98); backdrop-filter: blur(16px); flex-direction: column; padding: 80px 24px 30px; gap: 24px; transition: left 0.3s; z-index: 200; display: flex; }
+    .nav-links-mobile.open { left: 0; }
+    .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 199; display: none; }
+    .nav-overlay.open { display: block; }
+    .hero-full-fixed { min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(0,0,0,0.4); }
+    .hero-content { max-width: 900px; padding: 40px 20px; color: white; }
+    .shee-logo { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 700; margin-bottom: 20px; }
+    .elegant-tag { font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; background: rgba(0,0,0,0.3); display: inline-block; padding: 6px 24px; border-radius: 60px; margin-bottom: 24px; }
+    .hero-description { font-size: 1.1rem; max-width: 650px; margin: 0 auto 24px; }
+    .btn-primary { background: #c26e4a; border: none; padding: 12px 28px; border-radius: 60px; font-weight: 600; color: white; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
+    .btn-primary:hover { background: #a85733; }
+    .btn-outline { background: rgba(0,0,0,0.3); border: 2px solid white; padding: 12px 28px; border-radius: 60px; font-weight: 600; color: white; cursor: pointer; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+    .section-title { text-align: center; margin: 50px 0 20px; }
+    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2rem; background: rgba(255,250,244,0.85); display: inline-block; padding: 8px 24px; border-radius: 60px; color: #7a4c34; }
+    .category-dropdown-wrapper { text-align: center; margin: 20px 0 30px; }
+    .category-select { background: white; border: 1px solid #eedbcb; padding: 12px 24px; border-radius: 60px; font-size: 0.9rem; font-weight: 600; color: #5c3e2e; width: auto; min-width: 280px; cursor: pointer; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin: 40px 0; }
+    .product-card { background: rgba(255,255,255,0.95); border-radius: 28px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: 0.2s; }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-img { height: 210px; background-size: cover; background-position: center; }
+    .product-info { padding: 18px; }
+    .product-title { font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
+    .badge { background: #f0e0d4; display: inline-block; padding: 4px 12px; border-radius: 60px; font-size: 0.65rem; font-weight: 600; margin-bottom: 10px; }
+    .story-icon { font-size: 0.75rem; color: #c26e4a; background: #fef2ea; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 60px; margin: 10px 0; cursor: pointer; width: fit-content; }
+    .weight-select select { width: 100%; padding: 8px 12px; border-radius: 60px; border: 1px solid #eedbcb; background: white; margin: 8px 0; }
     .price-dynamic { font-weight: 700; font-size: 1.2rem; color: #c26e4a; margin: 10px 0; }
-    .add-to-cart-btn { background: #c26e4a; border: none; padding: 10px 16px; border-radius: 60px; font-weight: 600; font-size: 0.9rem; color: white; cursor: pointer; transition: all 0.2s ease; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 45px; background: #fff8f2; border-radius: 70px; padding: 50px 30px; margin: 60px 0; }
-    .feature { text-align: center; flex: 1; min-width: 150px; }
-    .feature i { font-size: 2.2rem; color: #c28a5c; margin-bottom: 16px; }
-    .carousel-section { margin: 40px 0 60px; border-radius: 48px; overflow: hidden; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2); }
-    .carousel-container { position: relative; width: 100%; height: 420px; overflow: hidden; }
-    .carousel-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s; z-index: 1; }
-    .carousel-slide.active { opacity: 1; z-index: 2; }
+    .add-to-cart-btn { background: #c26e4a; width: 100%; padding: 10px; border: none; border-radius: 60px; color: white; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; background: rgba(255,248,242,0.9); border-radius: 60px; padding: 40px 20px; margin: 50px 0; }
+    .feature { text-align: center; flex: 1 1 140px; }
+    .feature i { font-size: 2rem; color: #c28a5c; margin-bottom: 10px; }
+    .carousel-section { margin: 40px 0; border-radius: 40px; overflow: hidden; }
+    .carousel-container { position: relative; height: 360px; overflow: hidden; }
+    .carousel-slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s; object-fit: cover; }
+    .carousel-slide.active { opacity: 1; }
     .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
-    .carousel-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(46,36,31,0.85) 0%, rgba(46,36,31,0.3) 70%, transparent 100%); padding: 35px 30px; color: white; text-align: center; z-index: 3; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; margin: 40px 0; }
-    .gallery-item { border-radius: 28px; overflow: hidden; height: 250px; cursor: pointer; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-    .footer-elegant { background: #f7ede6; color: #4d3427; padding: 60px 0 30px; margin-top: 80px; border-top: 1px solid #e7d5ca; }
-    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
-    .footer-col { flex: 1; min-width: 180px; }
-    .footer-col h4 { font-family: 'Playfair Display', serif; margin-bottom: 20px; color: #9b5e42; }
-    .cart-sidebar { position: fixed; top: 0; right: -450px; width: 400px; height: 100%; background: white; z-index: 1100; transition: 0.3s; padding: 30px; overflow-y: auto; box-shadow: -5px 0 25px rgba(0,0,0,0.08); }
+    .carousel-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 20px; color: white; text-align: center; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 20px; margin: 40px 0; }
+    .gallery-item { border-radius: 24px; overflow: hidden; height: 170px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .cart-sidebar { position: fixed; top: 0; right: -100%; width: 90%; max-width: 380px; height: 100%; background: white; z-index: 300; transition: 0.3s; display: flex; flex-direction: column; box-shadow: -5px 0 20px rgba(0,0,0,0.1); }
     .cart-sidebar.open { right: 0; }
-    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 1050; display: none; }
-    .float-wa { position: fixed; bottom: 30px; right: 30px; z-index: 999; }
-    .float-top { position: fixed; bottom: 30px; left: 30px; z-index: 999; }
-    .whatsapp-btn, .top-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #25D366; color: white; font-size: 26px; cursor: pointer; border: none; box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
+    .cart-sidebar h3 { padding: 20px; border-bottom: 1px solid #eee; }
+    .cart-items-scroll { flex: 1; overflow-y: auto; padding: 20px; }
+    .cart-footer { padding: 20px; border-top: 1px solid #eee; }
+    .cart-item-row { display: flex; gap: 12px; margin-bottom: 16px; align-items: center; }
+    .cart-item-img { width: 55px; height: 55px; border-radius: 16px; object-fit: cover; }
+    .cart-item-details { flex: 1; }
+    .trash-icon { color: #c26e4a; cursor: pointer; }
+    .cart-total-text { text-align: right; font-weight: 700; font-size: 1.2rem; margin: 12px 0; }
+    .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 250; display: none; }
+    .cart-overlay.open { display: block; }
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); z-index: 400; align-items: center; justify-content: center; }
+    .modal-content { background: white; max-width: 460px; width: 90%; border-radius: 40px; padding: 24px; max-height: 90vh; overflow-y: auto; }
+    .story-modal-img { height: 200px; background-size: cover; background-position: center; border-radius: 24px; margin-bottom: 16px; }
+    .float-wa, .float-top { position: fixed; bottom: 20px; right: 20px; z-index: 150; }
+    .float-top { right: auto; left: 20px; }
+    .whatsapp-btn, .top-btn { width: 48px; height: 48px; border-radius: 50%; background: #25D366; color: white; font-size: 24px; border: none; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
     .top-btn { background: #c26e4a; }
-    .toast-msg { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: #2e241f; color: #fae7de; padding: 12px 28px; border-radius: 60px; z-index: 1200; transition: 0.2s; opacity: 0; pointer-events: none; }
-    .toast-msg.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-    .story-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 1500; align-items: center; justify-content: center; }
-    .story-modal-content { background: #fffaf5; max-width: 550px; width: 90%; border-radius: 48px; overflow: hidden; box-shadow: 0 30px 40px rgba(0,0,0,0.3); animation: fadeUp 0.3s ease; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .story-modal-img { width: 100%; height: 280px; background-size: cover; background-position: center; }
-    .story-modal-text { padding: 28px 28px 36px; text-align: center; }
-    .story-modal-text h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #7a4c34; margin-bottom: 12px; }
-    .story-modal-text p { font-size: 1rem; line-height: 1.5; color: #4a3427; margin-bottom: 20px; }
-    .story-modal-close { background: #c26e4a; border: none; padding: 12px 28px; border-radius: 60px; color: white; font-weight: 600; cursor: pointer; transition: 0.2s; }
-    .story-modal-close:hover { background: #9b5236; }
-    @media (max-width:800px) {
-      .navbar-lux { flex-direction: column; padding: 16px 20px; }
-      .shee-logo { font-size: 3rem; }
-      .hero-full-fixed { background-attachment: scroll; }
-      .cart-sidebar { width: 100%; right: -100%; }
-      .carousel-container { height: 320px; }
+    .toast-msg { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #2e241f; color: white; padding: 8px 20px; border-radius: 60px; opacity: 0; transition: 0.2s; pointer-events: none; z-index: 500; }
+    .toast-msg.show { opacity: 1; bottom: 100px; }
+    .footer-elegant { background: rgba(245,235,227,0.95); padding: 40px 0 20px; margin-top: 60px; }
+    .footer-inner { display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; margin-bottom: 30px; }
+    .footer-col { flex: 1 1 160px; }
+    .footer-col h4 { font-family: 'Playfair Display', serif; margin-bottom: 12px; color: #b05f3e; }
+    .footer-col a, .footer-col p { display: block; font-size: 0.8rem; color: #5c3b2a; text-decoration: none; margin-bottom: 6px; }
+    .news-input-wrapper { display: flex; background: white; border-radius: 60px; overflow: hidden; border: 1px solid #eedbcb; margin-top: 10px; }
+    .news-input-wrapper input { flex: 1; padding: 8px 12px; border: none; outline: none; }
+    .news-input-wrapper button { background: #c26e4a; border: none; padding: 8px 16px; color: white; cursor: pointer; }
+    .custom-cake-highlight { margin: 40px 0 30px; background: linear-gradient(135deg, rgba(255,245,238,0.98), rgba(255,250,240,0.98)); border-radius: 56px; padding: 30px 24px; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); }
+    .custom-cake-header { text-align: center; margin-bottom: 28px; }
+    .custom-cake-header h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #7a4c34; background: #fff0e6; display: inline-block; padding: 5px 30px; border-radius: 60px; }
+    .custom-studio-grid { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; }
+    .custom-form-modern { flex: 2; min-width: 280px; background: white; padding: 24px; border-radius: 48px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    .custom-form-modern input, .custom-form-modern select, .custom-form-modern textarea { width: 100%; margin: 12px 0; padding: 14px 18px; border-radius: 80px; border: 1px solid #eedbcb; background: #fffdfa; font-family: 'Inter', sans-serif; }
+    .custom-form-modern textarea { border-radius: 28px; resize: vertical; }
+    .btn-custom-wa { background: #25D366; color: white; width: 100%; border: none; padding: 14px; border-radius: 60px; font-weight: bold; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; }
+    @media (max-width: 760px) {
+      .nav-links-desktop { display: none; }
+      .hamburger-btn { display: block; }
+      .shee-logo { font-size: 2.8rem; }
+      .carousel-container { height: 260px; }
+      .products-grid { grid-template-columns: 1fr; }
+      .category-select { width: 90%; }
+      .custom-studio-grid { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-<div class="global-bg-texture"></div>
+<div class="global-bg"></div><div class="global-bg-primary"></div>
 <div class="content-foreground">
   <nav class="navbar-lux">
+    <button class="hamburger-btn" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
     <div class="logo-fresh">Shee's Kitchen</div>
-    <div class="nav-links"><a href="#home">Home</a><a href="#shop">Full Menu</a><a href="#gallery">Gallery</a><a id="customCakeNavBtn">✨ Custom Cake</a></div>
+    <div class="nav-links-desktop"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#gallery">Gallery</a><a id="customCakeNavDesktop">Custom Cake</a></div>
     <div class="cart-icon" id="cartIcon"><i class="fas fa-shopping-bag"></i> <span id="cartCount">0</span></div>
   </nav>
+  <div class="nav-links-mobile" id="navLinksMobile"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#gallery">Gallery</a><a id="customCakeNavMobile">Custom Cake</a></div>
+  <div class="nav-overlay" id="navOverlay"></div>
 
-  <section id="home" class="hero-full-fixed">
-    <div class="hero-content">
-      <div class="shee-logo">Shee's Kitchen</div>
-      <div class="elegant-tag">✦ artisan pâtisserie · juja ✦</div>
-      <div class="hero-description"><strong>Signature stories baked fresh daily.</strong><br>From our heart to your table — each creation carries a memory, a flavor, a moment of pure bliss.</div>
-      <div class="btn-group"><button class="btn-primary" id="heroOrderBtn"><i class="fas fa-shopping-cart"></i> Order Now</button><button class="btn-outline" id="exploreBtn">Explore Signature Menu</button></div>
-    </div>
-  </section>
+  <section id="home" class="hero-full-fixed"><div class="hero-content"><div class="shee-logo">Shee's Kitchen</div><div class="elegant-tag">artisan patisserie · juja</div><div class="hero-description">Handcrafted celebration cakes, wedding masterpieces, and custom designs. Over 70 varieties.</div><div class="btn-group"><button class="btn-primary" id="heroOrderBtn"><i class="fas fa-shopping-cart"></i> Order Now</button><button class="btn-outline" id="exploreBtn">Explore All Cakes</button></div></div></section>
 
   <div class="container">
-    <div id="shop" class="section-title"><h2>🍰 Complete Artisan Collection</h2><span>KSh 1,500/kg · tap the 📘 icon to discover each story</span></div>
-    <div class="category-tabs" id="categoryTabs"></div>
+    <div id="shop" class="section-title"><h2>Complete Cake Collection</h2></div>
+    <div class="category-dropdown-wrapper"><select id="categorySelect" class="category-select"><option value="all">All Cakes (70+ designs)</option><option value="celebration">Celebration Cakes</option><option value="wedding">Wedding Cakes</option><option value="event">Event & Corporate</option><option value="custom-themed">Custom & Themed</option><option value="classic">Classic Flavors</option><option value="premium">Premium & Gourmet</option><option value="diet">Special Diet</option><option value="styles">Cake Styles</option><option value="mini">Mini & Individual</option><option value="specialty">Specialty & Unique</option><option value="seasonal">Seasonal & Holiday</option></select></div>
     <div class="products-grid" id="productsGrid"></div>
 
-    <div class="features">
-      <div class="feature"><i class="fas fa-hand-sparkles"></i><h3>Handcrafted Stories</h3><p>Each cake tells a tale</p></div>
-      <div class="feature"><i class="fas fa-weight-hanging"></i><h3>1500/kg</h3><p>Fair & transparent</p></div>
-      <div class="feature"><i class="fas fa-motorcycle"></i><h3>Delivery Juja/NBO</h3><p>Same day available</p></div>
-      <div class="feature"><i class="fas fa-palette"></i><h3>Bespoke Studio</h3><p>Your vision, perfected</p></div>
-    </div>
+    <div class="custom-cake-highlight"><div class="custom-cake-header"><h3><i class="fas fa-paintbrush-fine"></i> Design Your Dream Cake</h3></div><div class="custom-studio-grid"><div class="custom-form-modern"><input type="text" id="customName" placeholder="Your name"><input type="text" id="customOccasion" placeholder="Occasion"><select id="customWeight"><option value="1">1 kg (1500 KSh)</option><option value="1.5">1.5 kg (2250 KSh)</option><option value="2">2 kg (3000 KSh)</option><option value="2.5">2.5 kg (3750 KSh)</option><option value="3">3 kg (4500 KSh)</option></select><textarea id="customNotes" rows="2" placeholder="Flavor, design ideas, color theme..."></textarea><button id="sendCustomInquiry" class="btn-custom-wa"><i class="fab fa-whatsapp"></i> Request via WhatsApp</button></div></div></div>
 
-    <div class="carousel-section"><div class="carousel-container" id="carouselContainer"><div class="carousel-slide active"><img src="https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cake"></div><div class="carousel-slide"><img src="https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Wedding"></div><div class="carousel-slide"><img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Chocolate"></div><div class="carousel-slide"><img src="https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Birthday"></div><div class="carousel-overlay"><h3 id="carouselTitle">Artisan Masterpiece</h3><p id="carouselDesc">Bespoke designs tailored to your celebration.</p></div><div class="carousel-dots" id="carouselDots"></div></div></div>
+    <div class="features"><div class="feature"><i class="fas fa-hand-sparkles"></i><h3>Handcrafted</h3><p>Each cake unique</p></div><div class="feature"><i class="fas fa-weight-hanging"></i><h3>1500/kg</h3><p>Fair pricing</p></div><div class="feature"><i class="fas fa-motorcycle"></i><h3>Delivery Juja/NBO</h3><p>Same day</p></div><div class="feature"><i class="fas fa-palette"></i><h3>Bespoke Studio</h3><p>Custom designs</p></div></div>
 
-    <div id="gallery" class="section-title"><h2>Sweet Gallery</h2><span>Instagram moments</span></div>
+    <div class="carousel-section"><div class="carousel-container" id="carouselContainer"><div class="carousel-slide active"><img src="https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Cake"></div><div class="carousel-slide"><img src="https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Cake"></div><div class="carousel-slide"><img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Cake"></div><div class="carousel-overlay"><h3>Artisan Creations</h3><p>70+ cake varieties for every occasion</p></div></div></div>
+
+    <div id="gallery" style="text-align:center; margin:40px 0 20px;"><h2 style="font-family:'Playfair Display'; font-size:2rem;">Sweet Gallery</h2><div style="background:rgba(255,250,240,0.8); display:inline-block; padding:4px 20px; border-radius:40px;">Our masterpiece moments</div></div>
     <div class="gallery-grid" id="galleryGrid"></div>
   </div>
 
-  <footer class="footer-elegant"><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Shee's Kitchen</h4><p>Luxury artisan bakery · Juja, Kenya</p><div class="social-icons"><i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-pinterest"></i></div></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-map-marker-alt"></i> Juja (near Juja City Mall)</p><p><i class="fas fa-phone-alt"></i> 0716 180 343</p><p><i class="fas fa-envelope"></i> hello@sheeskitchen.com</p></div><div class="footer-col"><h4>Quick Links</h4><p><a href="#home">Home</a></p><p><a href="#shop">Full Menu</a></p><p><a href="#gallery">Gallery</a></p><p><a id="customCakeFooterBtn">Custom Cake</a></p></div><div class="footer-col"><h4>Newsletter</h4><input type="email" id="newsEmail" placeholder="Your email" style="padding:12px; border-radius:60px; border:none; width:100%; margin:8px 0;"><button class="btn-primary" id="newsBtn" style="padding:10px 20px;">Subscribe</button></div></div><div class="copyright">© 2025 Shee's Kitchen — Signature stories & handcrafted love · KSh 1,500/kg</div></div></footer>
+  <footer class="footer-elegant"><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Shee's Kitchen</h4><p>Artisan bakery in Juja, Kenya.</p><p>Over 70 cake varieties</p></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 0716 180 343</p><p><i class="fas fa-envelope"></i> hello@sheeskitchen.com</p></div><div class="footer-col"><h4>Discover</h4><a href="#home">Home</a><a href="#shop">Shop</a><a id="customCakeFooterBtn" style="cursor:pointer;">Custom Cake</a></div><div class="footer-col"><h4>Newsletter</h4><div class="news-input-wrapper"><input type="email" id="newsEmail" placeholder="Your email"><button id="newsBtn">Subscribe</button></div></div></div><div class="footer-bottom" style="text-align:center; font-size:0.75rem;">© 2025 Shee's Kitchen — Every Cake Handcrafted with Love</div></div></footer>
 </div>
 
-<!-- Story Popup Modal -->
-<div id="storyModal" class="story-modal">
-  <div class="story-modal-content">
-    <div id="storyModalImg" class="story-modal-img"></div>
-    <div class="story-modal-text">
-      <h3 id="storyModalTitle"></h3>
-      <p id="storyModalDesc"></p>
-      <button class="story-modal-close" id="closeStoryModalBtn">Close & Keep Exploring ❤️</button>
-    </div>
-  </div>
-</div>
-
+<div class="cart-sidebar" id="cartSidebar"><h3>Your Bag</h3><div class="cart-items-scroll" id="cartItemsList"></div><div class="cart-footer"><div id="cartTotal"></div><button class="btn-primary" id="checkoutBtn" style="width:100%; margin-bottom:10px;">Proceed to Order</button><button id="closeCartBtn" style="background:#f0e0d4; border:none; padding:10px; width:100%; border-radius:60px;">Close</button></div></div>
+<div class="cart-overlay" id="cartOverlay"></div>
+<div id="deleteConfirmModal" class="modal"><div class="modal-content"><h3>Remove item?</h3><p id="deleteItemName"></p><div><button id="confirmDeleteBtn" class="btn-primary" style="margin-right:10px;">Yes</button><button id="cancelDeleteBtn" style="background:#f0e0d4; border:none; padding:8px 20px; border-radius:60px;">Cancel</button></div></div></div>
+<div id="contactCheckoutModal" class="modal"><div class="modal-content"><h3>Complete order</h3><input type="tel" id="contactInfoInput" placeholder="Phone number" style="width:100%; padding:10px; margin:8px 0; border-radius:60px;"><input type="text" id="locationInput" placeholder="Delivery address" style="width:100%; padding:10px; margin:8px 0; border-radius:60px;"><textarea id="extraNotesInput" rows="2" placeholder="Special requests" style="width:100%; padding:10px; border-radius:20px;"></textarea><button id="sendOrderWhatsAppBtn" class="btn-primary" style="width:100%;">Send via WhatsApp</button><button id="closeContactModalBtn" style="margin-top:10px; background:none; border:none;">Cancel</button></div></div>
+<div id="storyModal" class="modal"><div class="modal-content"><div id="storyModalImg" class="story-modal-img"></div><h3 id="storyModalTitle"></h3><p id="storyModalDesc"></p><button id="closeStoryModalBtn" class="btn-primary">Close</button></div></div>
+<div id="customModal" class="modal"><div class="modal-content"><h3>Quick Custom</h3><input id="customNameOrig" placeholder="Name"><input id="customOccasionOrig" placeholder="Occasion"><select id="customWeightOrig"><option value="1">1 kg</option></select><textarea id="customNotesOrig" placeholder="Ideas"></textarea><button id="sendCustomInquiryOrig">Request</button><button id="closeModalBtn">Close</button></div></div>
 <div class="float-top"><button class="top-btn" id="backToTop"><i class="fas fa-arrow-up"></i></button></div>
 <div class="float-wa"><button class="whatsapp-btn" id="whatsappFloat"><i class="fab fa-whatsapp"></i></button></div>
-<div class="overlay" id="cartOverlay"></div>
-<div class="cart-sidebar" id="cartSidebar"><h3>Your Bag 🛍️</h3><div id="cartItemsList"></div><div id="cartTotal"></div><button class="btn-primary" id="checkoutBtn" style="width:100%;">Proceed to Order</button><button id="closeCartBtn" style="margin-top:12px; background:#f3e7e0; border:none; padding:12px; width:100%; border-radius:60px;">Close</button></div>
-<div id="customModal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter: blur(6px); z-index:1300; align-items:center; justify-content:center;" onclick="if(event.target===this) this.style.display='none'"><div style="background: white; max-width:500px; width:90%; border-radius:48px; padding:32px; text-align:center;"><h3>✨ Design Your Dream Cake</h3><p>Pricing: KSh 1,500/kg</p><input type="text" id="customName" placeholder="Your name" style="width:100%; margin:12px 0; padding:14px; border-radius:60px;"><input type="text" id="customOccasion" placeholder="Occasion" style="width:100%; margin:12px 0; padding:14px; border-radius:60px;"><select id="customWeight" style="width:100%; margin:12px 0; padding:14px; border-radius:60px;"><option value="1">1 kg (1,500 KSh)</option><option value="1.5">1.5 kg (2,250 KSh)</option><option value="2">2 kg (3,000 KSh)</option><option value="2.5">2.5 kg (3,750 KSh)</option><option value="3">3 kg (4,500 KSh)</option><option value="4">4 kg (6,000 KSh)</option><option value="5">5 kg (7,500 KSh)</option></select><textarea id="customNotes" rows="2" placeholder="Flavor, design, colors..." style="width:100%; margin:12px 0; padding:14px; border-radius:28px;"></textarea><button class="btn-primary" id="sendCustomInquiry" style="width:100%;">Request via WhatsApp</button><button id="closeModalBtn" style="background:transparent; border:none; margin-top:12px;">Close</button></div></div>
-<div id="toastMsg" class="toast-msg">✨ Added to cart</div>
+<div id="toastMsg" class="toast-msg">Added to cart</div>
 
 <script>
   const PER_KG = 1500;
-  let cart = [];
-  let currentCategory = "all";
+  let cart = [], currentCategory = "all";
 
-  // ==================== ENHANCED CAKE DATABASE with FULL STORIES & IMAGES ====================
-  const allProducts = [
-    // === SHEE'S SIGNATURE COLLECTION (with stories) ===
-    { id:101, name:"Shee’s Classic Vanilla Dream", category:"signature", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"✨ Signature", story:"Madagascar bourbon vanilla & fluffy clouds of buttercream — the dream that started it all. Every layer whispers elegance, baked with heirloom vanilla beans." },
-    { id:102, name:"Signature Chocolate Indulgence", category:"signature", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Decadent", story:"Deep dark cocoa ganache, layered with velvet fudge. A chocoholic's pilgrimage. Topped with chocolate shards and a silky finish." },
-    { id:103, name:"Shee’s Red Velvet Royale", category:"signature", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"👑 Royale", story:"Crimson elegance meets cream cheese silk. Wrapped in whispers of cocoa and a touch of buttermilk — royalty on a plate." },
-    { id:104, name:"Signature Caramel Crunch Cake", category:"signature", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍯 Crunch", story:"Salted caramel drip, honeycomb brittle & buttery sponge — pure nostalgia. Inspired by grandmother's Sunday dessert table." },
-    { id:105, name:"Shee’s Tropical Delight (Pineapple + Coconut)", category:"signature", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🌴 Tropical", story:"Sun-kissed pineapple curd, toasted coconut flakes, and a breeze of paradise. One bite and you're on the Kenyan coast." },
-    { id:106, name:"Chocolate Fudge Supreme", category:"signature", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Supreme", story:"Molten fudge core, triple chocolate layers — for the true connoisseur. An explosion of richness in every forkful." },
-    
-    // Fresh Cream Cakes
-    { id:201, name:"Strawberry Fresh Cream Cake", category:"fresh-cream", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍓 Fresh", story:"Light whipped cream & fresh strawberries — airy delight. A summer breeze captured in a cake." },
-    { id:202, name:"Mixed Fruit Fresh Cream Cake", category:"fresh-cream", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍍 Fruity", story:"Tropical fruit melody in every spoonful. Layers of kiwi, mango, and berries." },
-    { id:203, name:"Mango Cream Cake", category:"fresh-cream", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🥭 Mango", story:"Juicy mango layers, sunshine in a slice. Kenyan mangoes at their peak." },
-    { id:204, name:"Blueberry Cream Cake", category:"fresh-cream", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🫐 Berries", story:"Blueberry compote swirls meet delicate cream. Antioxidant-rich and gorgeous." },
-    
-    // Chocolate Lovers Collection
-    { id:301, name:"Triple Chocolate Cake", category:"chocolate-lovers", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Triple", story:"Dark, milk & white chocolate harmony. Three layers of chocolate bliss." },
-    { id:302, name:"Dark Chocolate Truffle Cake", category:"chocolate-lovers", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Truffle", story:"Rich ganache, silky truffle texture. Hand-rolled truffles on top." },
-    { id:303, name:"KitKat Chocolate Cake", category:"chocolate-lovers", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍫 Crunch", story:"Crunchy KitKat border & chocolate heaven. A playful crowd-pleaser." },
-    
-    // African-Inspired
-    { id:401, name:"Coconut & Palm Sugar Cake", category:"african", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🌴 Local", story:"Traditional palm sugar, fresh coconut — Kenyan roots. An ancestral recipe revived." },
-    { id:402, name:"Chai-Spiced Cake", category:"african", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"☕ Chai", story:"Cardamom, cinnamon, cloves — warmth in every crumb. Perfect with afternoon tea." },
-    { id:403, name:"Passion Fruit Cake", category:"african", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"✨ Tangy", story:"Zesty passionfruit curd, a taste of Kenyan summer. Bright, bold, beautiful." },
-    
-    // Luxury Designer & Geode
-    { id:501, name:"Gold Leaf Elegance", category:"luxury", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"💎 Gold", story:"Edible gold leaf & marble fondant — for iconic moments. Pure opulence." },
-    { id:502, name:"Geode Crystal Cake", category:"luxury", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🔮 Geode", story:"Rock candy crystals, agate art — statement piece. Edible gemstone illusion." },
-    { id:503, name:"Minimalist Korean Cake", category:"luxury", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🌸 Korean", story:"Soft buttercream, minimalist elegance. Inspired by Seoul's chic bakeries." },
-    
-    // Number & Letter Cakes / Kids Character
-    { id:601, name:"Number Cake (0-9)", category:"number-letters", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🔢 Number", story:"Custom age numbers, decorated to theme. Make that milestone memorable." },
-    { id:602, name:"Alphabet Cake", category:"number-letters", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🔤 Letter", story:"Name initials or full word — playful & trendy. Spell out love." },
-    { id:603, name:"Unicorn Fantasy Cake", category:"kids", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🦄 Unicorn", story:"Rainbow swirls, magical horns, kid-approved. Dreams do come true." },
-    
-    // Bento & Mini Cakes (trendy)
-    { id:701, name:"Bento Cake (Personal 4\")", category:"bento-mini", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🎁 Bento", story:"Tiny lunchbox cake — single serve luxury. Instagram's favorite trend." },
-    { id:702, name:"Mini Duo Celebration Set", category:"bento-mini", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍰 Duo", story:"Two mini cakes, double the joy. Perfect for intimate celebrations." },
-    
-    // Cheesecake & Ice Cream Cakes
-    { id:801, name:"New York Cheesecake", category:"cheesecake", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🗽 Classic", story:"Dense, creamy, graham crust — pure bliss. The ultimate comfort dessert." },
-    { id:802, name:"Biscoff Cheesecake", category:"cheesecake", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍪 Biscoff", story:"Caramelized lotus spread & silky cheese. A cookie butter dream." },
-    { id:803, name:"Ice Cream Cake (Vanilla Choc)", category:"ice-cream", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🍦 Frozen", story:"Layers of ice cream & cake — summer delight. Cool, creamy, irresistible." },
-    
-    // Social Media Trendy (Pinata, Pull-Up, Burn Away)
-    { id:901, name:"Pinata Surprise Cake", category:"trendy", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🎉 Pinata", story:"Candy-filled center, smashing excitement! Party in every slice." },
-    { id:902, name:"Money Pull Cake", category:"trendy", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"💰 Money Pull", story:"Pull out real cash notes (gift idea). The ultimate surprise gift." },
-    { id:903, name:"Hidden Message Cake", category:"trendy", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"💌 Secret", story:"Slice reveals a personalized greeting inside. Words from the heart." },
-    
-    // Corporate & Branding
-    { id:1001, name:"Corporate Logo Cake", category:"corporate", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🏢 Brand", story:"Edible logo print, company colors, milestone perfect. Impress your team." },
-    { id:1002, name:"Office Milestone Cake", category:"corporate", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"🎯 Milestone", story:"Years of success celebrated with style. Raise a slice to achievements." },
+  // Complete 70+ cake list with all requested varieties - NO EMOJIS
+  const products = [
+    // Celebration Cakes (11)
+    { id:1, name:"Birthday Sparkle Cake", category:"celebration", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Birthday", story:"Colorful sprinkles, vanilla sponge, perfect for kids and adults." },
+    { id:2, name:"Anniversary Rose Elegance", category:"celebration", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Anniversary", story:"Gold drip with fresh roses, romantic design." },
+    { id:3, name:"Graduation Cap Cake", category:"celebration", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Graduation", story:"Chocolate ganache with edible graduation cap." },
+    { id:4, name:"Baby Shower Bliss", category:"celebration", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Baby Shower", story:"Soft pastel layers, whipped cream frosting." },
+    { id:5, name:"Gender Reveal Surprise", category:"celebration", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Gender Reveal", story:"Blue or pink interior when sliced." },
+    { id:6, name:"Welcome Baby Cake", category:"celebration", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Newborn", story:"Cute stroller and onesie design." },
+    { id:7, name:"Retirement Celebration", category:"celebration", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Retirement", story:"Elegant gold leaf, best wishes message." },
+    { id:8, name:"Congratulations Cake", category:"celebration", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Congrats", story:"Bold lettering and star decorations." },
+    { id:9, name:"Farewell Flight Cake", category:"celebration", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Farewell", story:"Airplane theme, perfect for moving away." },
+    // Wedding Cakes (8)
+    { id:10, name:"Traditional Tiered Wedding", category:"wedding", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Wedding", story:"Classic ivory tiers with intricate piping." },
+    { id:11, name:"Modern Minimalist", category:"wedding", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Modern", story:"Clean lines, monochrome palette, geometric details." },
+    { id:12, name:"Rustic Wedding Cake", category:"wedding", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Rustic", story:"Burlap and wood accents, natural charm." },
+    { id:13, name:"Floral Wedding Masterpiece", category:"wedding", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Floral", story:"Sugar flower cascade, romantic aesthetic." },
+    { id:14, name:"Luxury Designer Cake", category:"wedding", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Luxury", story:"Gold foil accents, 3D sculpted elements." },
+    { id:15, name:"Semi-Naked Wedding", category:"wedding", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Semi-Naked", story:"Light crumb coat with berries." },
+    { id:16, name:"Cultural Wedding Cake", category:"wedding", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Cultural", story:"Traditional motifs and symbolic decorations." },
+    // Event & Corporate (6)
+    { id:17, name:"Corporate Branded Cake", category:"event", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Corporate", story:"Edible logo print, company colors." },
+    { id:18, name:"Product Launch Cake", category:"event", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Launch", story:"Sleek design matching brand identity." },
+    { id:19, name:"Office Celebration", category:"event", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Office", story:"Team spirit theme with fun messages." },
+    { id:20, name:"Company Anniversary", category:"event", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Milestone", story:"Years of excellence commemorative design." },
+    { id:21, name:"Award Ceremony Cake", category:"event", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Awards", story:"Golden trophy accents, elegant finish." },
+    { id:22, name:"Networking Event", category:"event", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Networking", story:"Elegant finger desserts and mini bites." },
+    // Custom & Themed (7)
+    { id:23, name:"Cartoon Character Cake", category:"custom-themed", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Cartoon", story:"Custom edible image of favorite character." },
+    { id:24, name:"Superhero Cake", category:"custom-themed", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Superhero", story:"Comic book style, cape and mask design." },
+    { id:25, name:"Princess Castle Cake", category:"custom-themed", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Princess", story:"Fondant castle towers and royal details." },
+    { id:26, name:"Sports Themed Cake", category:"custom-themed", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Sports", story:"Jersey and ball design for sports fans." },
+    { id:27, name:"Hobby Cake", category:"custom-themed", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Hobby", story:"Music notes, travel suitcase, or fashion theme." },
+    { id:28, name:"Movie & TV Theme", category:"custom-themed", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Movie", story:"Iconic props and film strip design." },
+    { id:29, name:"Personalized Photo Cake", category:"custom-themed", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Photo", story:"Edible photo print with custom message." },
+    // Classic Flavors (8)
+    { id:30, name:"Classic Chocolate Fudge", category:"classic", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Chocolate", story:"Rich fudge layers, deep cocoa flavor." },
+    { id:31, name:"Vanilla Bean Dream", category:"classic", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Vanilla", story:"Madagascar vanilla bean specks." },
+    { id:32, name:"Red Velvet Royale", category:"classic", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Red Velvet", story:"Cream cheese frosting, crimson crumb." },
+    { id:33, name:"Black Forest", category:"classic", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Black Forest", story:"Cherries and chocolate shavings." },
+    { id:34, name:"Marble Cake", category:"classic", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Marble", story:"Swirled vanilla and chocolate batter." },
+    { id:35, name:"Lemon Burst", category:"classic", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Lemon", story:"Zesty citrus flavor with lemon glaze." },
+    { id:36, name:"Carrot Walnut", category:"classic", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Carrot", story:"Cream cheese icing, walnuts and spice." },
+    { id:37, name:"Traditional Fruit Cake", category:"classic", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Fruit Cake", story:"Rich with dried fruits and nuts." },
+    // Premium & Gourmet (7)
+    { id:38, name:"Oreo Explosion", category:"premium", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Oreo", story:"Cookies and cream filling, crushed Oreo topping." },
+    { id:39, name:"Ferrero Rocher", category:"premium", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Ferrero", story:"Hazelnut praline with crunchy wafer." },
+    { id:40, name:"Nutella Heaven", category:"premium", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Nutella", story:"Hazelnut spread filling and topping." },
+    { id:41, name:"Salted Caramel", category:"premium", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Caramel", story:"Buttery caramel drizzle with sea salt." },
+    { id:42, name:"Lotus Biscoff", category:"premium", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Biscoff", story:"Caramelized biscuit spread, cookie crumble." },
+    { id:43, name:"Chocolate Ganache", category:"premium", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Ganache", story:"Silky dark chocolate ganache coating." },
+    { id:44, name:"Cheesecake Inspired", category:"premium", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Cheesecake", story:"Creamy layers with graham cracker base." },
+    // Special Diet (6)
+    { id:45, name:"Eggless Chocolate", category:"diet", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Eggless", story:"No eggs, moist and decadent." },
+    { id:46, name:"Vegan Vanilla", category:"diet", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Vegan", story:"Plant-based milk and coconut cream." },
+    { id:47, name:"Gluten Free Fudge", category:"diet", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Gluten Free", story:"Almond flour base, rich chocolate." },
+    { id:48, name:"Sugar Free Vanilla", category:"diet", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Sugar Free", story:"Stevia sweetened, diabetic friendly." },
+    { id:49, name:"Keto Chocolate", category:"diet", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Keto", story:"Low carb, high fat, almond flour." },
+    { id:50, name:"Healthy Low Calorie", category:"diet", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Low Calorie", story:"Greek yogurt frosting, reduced sugar." },
+    // Cake Styles (7)
+    { id:51, name:"Buttercream Rosette", category:"styles", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Buttercream", story:"Swirled rosettes, velvety finish." },
+    { id:52, name:"Fondant Elegance", category:"styles", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Fondant", story:"Smooth flawless fondant covering." },
+    { id:53, name:"Drip Cake", category:"styles", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Drip", story:"Chocolate ganache drip effect." },
+    { id:54, name:"Naked Cake", category:"styles", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Naked", story:"Exposed layers with minimal frosting." },
+    { id:55, name:"Semi Naked Rustic", category:"styles", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Semi Naked", story:"Light crumb coat, rustic charm." },
+    { id:56, name:"Mirror Glaze", category:"styles", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Mirror Glaze", story:"High shine colorful glaze finish." },
+    { id:57, name:"Textured Art Cake", category:"styles", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Textured", story:"Palette knife strokes, artistic finish." },
+    // Mini & Individual (5)
+    { id:58, name:"Cupcake Dozen", category:"mini", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Cupcakes", story:"Assorted flavors, perfect for parties." },
+    { id:59, name:"Bento Lunchbox Cake", category:"mini", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Bento", story:"Personal 4 inch cake, cute packaging." },
+    { id:60, name:"Mini Celebration Cake", category:"mini", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Mini", story:"Serves 2-3, perfect for small gatherings." },
+    { id:61, name:"Cake Slices", category:"mini", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Slice", story:"Grab and go single servings." },
+    { id:62, name:"Jar Cakes", category:"mini", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Jar", story:"Layered in mason jar, gift ready." },
+    // Specialty & Unique (6)
+    { id:63, name:"Number Cake", category:"specialty", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Number", story:"Shaped number for milestone birthdays." },
+    { id:64, name:"Letter Cake", category:"specialty", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Letter", story:"Initials cake, personalized design." },
+    { id:65, name:"Pinata Smash Cake", category:"specialty", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Pinata", story:"Hidden candy inside, smash and celebrate." },
+    { id:66, name:"Pull Apart Cupcake Cake", category:"specialty", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Pull Apart", story:"Cupcake arrangement forming a shape." },
+    { id:67, name:"Money Surprise Cake", category:"specialty", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Money", story:"Hidden bills, fun surprise inside." },
+    { id:68, name:"Ice Cream Cake", category:"specialty", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Ice Cream", story:"Layered frozen treat, cake and ice cream." },
+    // Seasonal & Holiday (7)
+    { id:69, name:"Christmas Yule Log", category:"seasonal", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Christmas", story:"Gingerbread spice, festive decorations." },
+    { id:70, name:"Valentine's Heart Cake", category:"seasonal", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Valentine", story:"Heart shape, raspberry rose filling." },
+    { id:71, name:"Easter Bunny Cake", category:"seasonal", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Easter", story:"Carrot and coconut, bunny design." },
+    { id:72, name:"New Year's Sparkle", category:"seasonal", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"New Year", story:"Edible glitter, clock design." },
+    { id:73, name:"Mother's Day Blossom", category:"seasonal", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Mother's Day", story:"Floral elegance, spring colors." },
+    { id:74, name:"Father's Day Cake", category:"seasonal", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Father's Day", story:"Tool or tie themed design." },
+    { id:75, name:"Eid Mubarak Cake", category:"seasonal", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Eid", story:"Golden crescent and star decorations." }
   ];
 
-  const categoryMap = [
-    { key:"all", label:"All Cakes" },
-    { key:"signature", label:"👑 Signature Stories" },
-    { key:"fresh-cream", label:"🍓 Fresh Cream" },
-    { key:"chocolate-lovers", label:"🍫 Chocolate Lovers" },
-    { key:"african", label:"🌍 African-Inspired" },
-    { key:"luxury", label:"💎 Luxury Designer" },
-    { key:"number-letters", label:"🔢 Number & Letters" },
-    { key:"kids", label:"🧸 Kids & Characters" },
-    { key:"bento-mini", label:"🎁 Bento & Mini" },
-    { key:"cheesecake", label:"🍰 Cheesecakes" },
-    { key:"ice-cream", label:"🍦 Ice Cream Cakes" },
-    { key:"trendy", label:"📱 Social Media Trendy" },
-    { key:"corporate", label:"🏢 Corporate" }
-  ];
-
-  function formatKES(amount) { return `KSh ${amount.toLocaleString()}`; }
-  function showToast(msg) { const t = document.getElementById("toastMsg"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2000); }
-
-  function openStoryModal(product) {
-    document.getElementById("storyModalTitle").innerText = product.name;
-    document.getElementById("storyModalDesc").innerHTML = `📖 ${product.story || "Handcrafted with love, perfect for your celebration."}<br><br>✨ Base price: KSh 1,500/kg — available in any size.`;
-    const imgDiv = document.getElementById("storyModalImg");
-    imgDiv.style.backgroundImage = `url('${product.image}')`;
-    imgDiv.style.backgroundSize = "cover";
-    imgDiv.style.backgroundPosition = "center";
-    document.getElementById("storyModal").style.display = "flex";
-  }
-
-  function renderCategoryTabs() {
-    const container = document.getElementById("categoryTabs");
-    container.innerHTML = categoryMap.map(cat => `<button class="tab-btn ${cat.key === currentCategory ? 'active' : ''}" data-cat="${cat.key}">${cat.label}</button>`).join('');
-    document.querySelectorAll(".tab-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        currentCategory = btn.dataset.cat;
-        renderCategoryTabs();
-        renderProducts();
-      });
-    });
-  }
-
-  function renderProducts() {
-    let filtered = currentCategory === "all" ? allProducts : allProducts.filter(p => p.category === currentCategory);
-    const grid = document.getElementById("productsGrid");
-    if (filtered.length === 0) { grid.innerHTML = "<div style='text-align:center; grid-column:1/-1; padding:40px;'>✨ More artisan creations coming — contact us for bespoke orders!</div>"; return; }
-    grid.innerHTML = filtered.map(p => `
-      <div class="product-card" data-id="${p.id}">
-        <div class="product-img" style="background-image:url('${p.image}')"></div>
-        <div class="product-info">
-          <div class="badge">${p.badge}</div>
-          <div class="product-title">${p.name}</div>
-          <div class="story-icon" data-story-id="${p.id}"><i class="fas fa-book-open"></i> Read the story</div>
-          <div class="weight-select"><select class="kg-weight" data-id="${p.id}">${[1,1.5,2,2.5,3,3.5,4,5].map(w => `<option value="${w}">${w} kg</option>`).join('')}</select></div>
-          <div class="price-dynamic" data-price="${p.id}">${formatKES(PER_KG)}</div>
-          <button class="add-to-cart-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        </div>
-      </div>
-    `).join('');
-
-    document.querySelectorAll(".story-icon").forEach(el => {
-      const pid = parseInt(el.dataset.storyId);
-      const product = allProducts.find(p => p.id === pid);
-      if(product) el.addEventListener("click", (e) => { e.stopPropagation(); openStoryModal(product); });
-    });
-
-    document.querySelectorAll(".kg-weight").forEach(select => {
-      const pid = parseInt(select.dataset.id);
-      const priceSpan = document.querySelector(`.price-dynamic[data-price="${pid}"]`);
-      const updatePrice = () => { const w = parseFloat(select.value); priceSpan.innerText = formatKES(w * PER_KG); };
-      select.addEventListener("change", updatePrice);
-      updatePrice();
-    });
-
-    document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        const id = parseInt(btn.dataset.id);
-        const product = allProducts.find(p => p.id === id);
-        const card = btn.closest(".product-card");
-        const weight = parseFloat(card.querySelector(".kg-weight").value);
-        cart.push({ ...product, weight, totalPrice: weight * PER_KG });
-        updateCartUI();
-        showToast(`🍰 ${product.name} (${weight}kg) added`);
-      });
-    });
-  }
-
-  function updateCartUI() {
-    const cartDiv = document.getElementById("cartItemsList");
-    const totalSpan = document.getElementById("cartCount");
-    if (cart.length === 0) { cartDiv.innerHTML = "<p>Your bag is empty</p>"; document.getElementById("cartTotal").innerHTML = ""; totalSpan.innerText = "0"; return; }
-    let total = 0;
-    cartDiv.innerHTML = cart.map((item, idx) => {
-      total += item.totalPrice;
-      return `<div style="display:flex; gap:12px; margin-bottom:16px;"><img src="${item.image}" width="55" height="55" style="border-radius:28px; object-fit:cover;"><div><strong>${item.name}</strong><br>${item.weight} kg · ${formatKES(item.totalPrice)}</div><i class="fas fa-trash-alt" style="cursor:pointer; color:#c26e4a; margin-left:auto;" data-idx="${idx}"></i></div>`;
-    }).join('');
-    document.getElementById("cartTotal").innerHTML = `<strong>Total: ${formatKES(total)}</strong>`;
-    totalSpan.innerText = cart.length;
-    document.querySelectorAll(".fa-trash-alt").forEach(trash => {
-      trash.addEventListener("click", (e) => { const idx = parseInt(trash.dataset.idx); cart.splice(idx,1); updateCartUI(); showToast("Removed"); });
-    });
-  }
-
-  // Gallery & Carousel (unchanged but functional)
-  const galleryImgs = ["https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500","https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500","https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500","https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500"];
-  function renderGallery() { document.getElementById("galleryGrid").innerHTML = galleryImgs.map(img => `<div class="gallery-item"><img src="${img}" alt="cake gallery"></div>`).join(''); }
-  const carouselItems = [{ title:"Signature Caramel Crunch", desc:"Buttery crunch & salted caramel." },{ title:"Geode Crystal Cake", desc:"Edible crystals & luxury design." },{ title:"Bento Mini Cakes", desc:"Trendy personal-sized delights." },{ title:"African-Inspired Chai", desc:"Warm spices & Kenyan soul." }];
-  let currentSlide = 0, autoInterval;
-  const slides = document.querySelectorAll('.carousel-slide');
-  const titleEl = document.getElementById('carouselTitle');
-  const descEl = document.getElementById('carouselDesc');
-  function updateCarousel(index) { slides.forEach((s,i)=> i===index ? s.classList.add('active') : s.classList.remove('active')); titleEl.textContent = carouselItems[index].title; descEl.textContent = carouselItems[index].desc; document.querySelectorAll('.dot').forEach((dot,i)=> i===index ? dot.classList.add('active') : dot.classList.remove('active')); }
-  function nextSlide() { currentSlide = (currentSlide+1)%carouselItems.length; updateCarousel(currentSlide); }
-  function startAutoScroll() { if(autoInterval) clearInterval(autoInterval); autoInterval = setInterval(nextSlide,3000); }
-  function createDots() { const container = document.getElementById('carouselDots'); carouselItems.forEach((_,idx)=>{ const dot=document.createElement('button'); dot.classList.add('dot'); if(idx===0) dot.classList.add('active'); dot.addEventListener('click',()=>{ clearInterval(autoInterval); currentSlide=idx; updateCarousel(currentSlide); startAutoScroll(); }); container.appendChild(dot); }); }
-  createDots(); startAutoScroll(); updateCarousel(0);
-  document.querySelector('.carousel-container')?.addEventListener('mouseenter',()=>clearInterval(autoInterval));
-  document.querySelector('.carousel-container')?.addEventListener('mouseleave',startAutoScroll);
-
-  // Event listeners
-  document.getElementById("heroOrderBtn")?.addEventListener("click",()=>{ document.getElementById("cartSidebar").classList.add("open"); document.getElementById("cartOverlay").style.display="block"; updateCartUI(); });
-  document.getElementById("exploreBtn")?.addEventListener("click",()=>document.getElementById("shop").scrollIntoView({ behavior:"smooth" }));
-  document.getElementById("cartIcon")?.addEventListener("click",()=>{ document.getElementById("cartSidebar").classList.add("open"); document.getElementById("cartOverlay").style.display="block"; updateCartUI(); });
-  document.getElementById("closeCartBtn")?.addEventListener("click",()=>{ document.getElementById("cartSidebar").classList.remove("open"); document.getElementById("cartOverlay").style.display="none"; });
-  document.getElementById("cartOverlay")?.addEventListener("click",()=>{ document.getElementById("cartSidebar").classList.remove("open"); document.getElementById("cartOverlay").style.display="none"; });
-  document.getElementById("checkoutBtn")?.addEventListener("click",()=>{ if(cart.length===0) showToast("Your cart is empty"); else alert("🎉 Thank you! We'll contact you via WhatsApp within 30 minutes to confirm your order. 🎂"); });
-  document.getElementById("backToTop")?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-  document.getElementById("whatsappFloat")?.addEventListener("click",()=>window.open("https://wa.me/254716180343?text=Hello%20Shee's%20Kitchen!%20I'd%20like%20to%20order%20a%20cake%20🍰","_blank"));
-  document.getElementById("newsBtn")?.addEventListener("click",()=>{ const email=document.getElementById("newsEmail").value; if(email&&email.includes("@")){ showToast("Subscribed!"); document.getElementById("newsEmail").value=""; } else showToast("Valid email please"); });
-  const modal = document.getElementById("customModal");
-  document.getElementById("customCakeNavBtn")?.addEventListener("click",()=>modal.style.display="flex");
-  document.getElementById("customCakeFooterBtn")?.addEventListener("click",()=>modal.style.display="flex");
-  document.getElementById("closeModalBtn")?.addEventListener("click",()=>modal.style.display="none");
-  document.getElementById("sendCustomInquiry")?.addEventListener("click",()=>{ const name=document.getElementById("customName").value, occasion=document.getElementById("customOccasion").value, weight=document.getElementById("customWeight").value, notes=document.getElementById("customNotes").value; const msg=`*Custom Cake Request*%0A• Name: ${name||"Guest"}%0A• Occasion: ${occasion||"Celebration"}%0A• Weight: ${weight} kg (KSh ${weight*PER_KG})%0A• Notes: ${notes||"No details"}`; window.open(`https://wa.me/254716180343?text=${msg}`,"_blank"); modal.style.display="none"; });
-  
-  document.getElementById("closeStoryModalBtn")?.addEventListener("click", () => document.getElementById("storyModal").style.display = "none");
-  window.addEventListener("click", (e) => { if(e.target === document.getElementById("storyModal")) document.getElementById("storyModal").style.display = "none"; });
-  
-  renderCategoryTabs();
-  renderProducts();
-  renderGallery();
+  function formatKES(amt){ return "KSh " + amt.toLocaleString(); }
+  function showToast(msg){ let t = document.getElementById("toastMsg"); t.textContent = msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"), 2000); }
+  function updateCartUI(){ let container = document.getElementById("cartItemsList"), totalSpan = document.getElementById("cartCount"); if(cart.length===0){ container.innerHTML = "<div style='text-align:center;padding:20px;'>Your bag is empty</div>"; document.getElementById("cartTotal").innerHTML = ""; totalSpan.innerText = "0"; return; } let total=0, html=""; cart.forEach((item,idx)=>{ html += `<div class="cart-item-row"><img class="cart-item-img" src="${item.image}"><div class="cart-item-details"><strong>${item.name}</strong><div>${item.weight} kg</div><div>${formatKES(item.totalPrice)}</div></div><i class="fas fa-trash-alt trash-icon" data-idx="${idx}"></i></div>`; total += item.totalPrice; }); container.innerHTML = html; document.getElementById("cartTotal").innerHTML = `<div class="cart-total-text">Total ${formatKES(total)}</div>`; totalSpan.innerText = cart.length; document.querySelectorAll(".trash-icon").forEach(icon=>{ icon.addEventListener("click",()=>{ pendingDeleteIdx = parseInt(icon.dataset.idx); document.getElementById("deleteItemName").innerText = `Remove "${cart[pendingDeleteIdx].name}"?`; document.getElementById("deleteConfirmModal").style.display = "flex"; }); }); }
+  let pendingDeleteIdx = null;
+  function deleteItem(){ if(pendingDeleteIdx!==null && cart[pendingDeleteIdx]){ cart.splice(pendingDeleteIdx,1); updateCartUI(); showToast("Item removed"); } pendingDeleteIdx=null; document.getElementById("deleteConfirmModal").style.display = "none"; }
+  function renderProducts(){ let filtered = currentCategory === "all" ? products : products.filter(p => p.category === currentCategory); let grid = document.getElementById("productsGrid"); if(filtered.length===0){ grid.innerHTML = "<div style='text-align:center;padding:40px;'>More creations coming soon</div>"; return; } grid.innerHTML = filtered.map(p => `<div class="product-card"><div class="product-img" style="background-image:url('${p.image}')"></div><div class="product-info"><div class="badge">${p.badge}</div><div class="product-title">${p.name}</div><div class="story-icon" data-id="${p.id}"><i class="fas fa-book-open"></i> Read story</div><div class="weight-select"><select class="kg-weight" data-id="${p.id}">${[1,1.5,2,2.5,3].map(w=>`<option value="${w}">${w} kg</option>`).join('')}</select></div><div class="price-dynamic" data-price="${p.id}">${formatKES(PER_KG)}</div><button class="add-to-cart-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> Add to Cart</button></div></div>`).join(''); attachEvents(); }
+  function attachEvents(){ document.querySelectorAll(".story-icon").forEach(el=>{ let pid = parseInt(el.dataset.id); let prod = products.find(p=>p.id===pid); if(prod) el.addEventListener("click",()=>{ document.getElementById("storyModalTitle").innerText = prod.name; document.getElementById("storyModalDesc").innerHTML = prod.story + "<br><br>Base price: 1500 KSh per kg"; document.getElementById("storyModalImg").style.backgroundImage = `url('${prod.image}')`; document.getElementById("storyModal").style.display = "flex"; }); }); document.querySelectorAll(".kg-weight").forEach(select=>{ let pid = parseInt(select.dataset.id); let priceSpan = document.querySelector(`.price-dynamic[data-price="${pid}"]`); let update = ()=>{ priceSpan.innerText = formatKES(parseFloat(select.value)*PER_KG); }; select.addEventListener("change", update); update(); }); document.querySelectorAll(".add-to-cart-btn").forEach(btn=>{ btn.addEventListener("click",()=>{ let id = parseInt(btn.dataset.id); let product = products.find(p=>p.id===id); let card = btn.closest(".product-card"); let weight = parseFloat(card.querySelector(".kg-weight").value); cart.push({...product, weight, totalPrice: weight*PER_KG}); updateCartUI(); showToast(`${product.name} (${weight}kg) added`); }); }); }
+  function openContactModal(){ if(cart.length===0){ showToast("Cart is empty"); return; } document.getElementById("contactCheckoutModal").style.display = "flex"; }
+  function sendOrder(){ let phone = document.getElementById("contactInfoInput").value.trim(); let loc = document.getElementById("locationInput").value.trim(); if(!phone || !loc){ showToast("Phone and address required"); return; } let items = "", total = 0; cart.forEach(i=>{ items += `- ${i.name} (${i.weight}kg) - ${formatKES(i.totalPrice)}\n`; total += i.totalPrice; }); let msg = `SHEE'S KITCHEN ORDER\nContact: ${phone}\nDelivery: ${loc}\nNotes: ${document.getElementById("extraNotesInput").value}\n\nOrder:\n${items}\nTOTAL: ${formatKES(total)}`; window.open(`https://wa.me/254716180343?text=${encodeURIComponent(msg)}`,"_blank"); cart = []; updateCartUI(); document.getElementById("contactCheckoutModal").style.display = "none"; document.getElementById("cartSidebar").classList.remove("open"); document.getElementById("cartOverlay").classList.remove("open"); showToast("Order sent! We will reply on WhatsApp."); }
+  function initCarousel(){ let slides = document.querySelectorAll('.carousel-slide'); let idx = 0; setInterval(()=>{ slides.forEach((s,i)=> s.classList.toggle('active', i===idx)); idx = (idx+1) % slides.length; }, 4000); }
+  function sendNewsletter(){ let email = document.getElementById("newsEmail").value.trim(); if(!email.includes("@")){ showToast("Valid email please"); return; } window.open(`https://wa.me/254716180343?text=Newsletter subscription: ${email}`,"_blank"); showToast("Subscription sent"); document.getElementById("newsEmail").value = ""; }
+  function closeMobileMenu(){ document.getElementById("navLinksMobile").classList.remove("open"); document.getElementById("navOverlay").classList.remove("open"); }
+  initCarousel(); renderProducts(); updateCartUI();
+  document.getElementById("categorySelect").addEventListener("change", (e)=>{ currentCategory = e.target.value; renderProducts(); });
+  document.getElementById("hamburgerBtn").onclick = ()=>{ document.getElementById("navLinksMobile").classList.toggle("open"); document.getElementById("navOverlay").classList.toggle("open"); };
+  document.getElementById("navOverlay").onclick = closeMobileMenu;
+  document.querySelectorAll("#navLinksMobile a, #customCakeNavDesktop, #customCakeNavMobile, #customCakeFooterBtn").forEach(link=>{ link.addEventListener("click", (e)=>{ if(link.id && link.id.includes("customCake")){ document.querySelector(".custom-cake-highlight").scrollIntoView({behavior:"smooth"}); closeMobileMenu(); } else if(link.getAttribute("href") === "#shop"){ document.getElementById("shop").scrollIntoView({behavior:"smooth"}); closeMobileMenu(); } else if(link.getAttribute("href") === "#gallery"){ document.getElementById("gallery").scrollIntoView({behavior:"smooth"}); closeMobileMenu(); } else if(link.getAttribute("href") === "#home"){ document.getElementById("home").scrollIntoView({behavior:"smooth"}); closeMobileMenu(); } }); });
+  document.getElementById("heroOrderBtn").onclick = ()=>{ document.getElementById("cartSidebar").classList.add("open"); document.getElementById("cartOverlay").classList.add("open"); };
+  document.getElementById("exploreBtn").onclick = ()=> document.getElementById("shop").scrollIntoView({behavior:"smooth"});
+  document.getElementById("cartIcon").onclick = ()=>{ document.getElementById("cartSidebar").classList.add("open"); document.getElementById("cartOverlay").classList.add("open"); };
+  document.getElementById("closeCartBtn").onclick = ()=>{ document.getElementById("cartSidebar").classList.remove("open"); document.getElementById("cartOverlay").classList.remove("open"); };
+  document.getElementById("cartOverlay").onclick = ()=>{ document.getElementById("cartSidebar").classList.remove("open"); document.getElementById("cartOverlay").classList.remove("open"); };
+  document.getElementById("checkoutBtn").onclick = openContactModal;
+  document.getElementById("sendOrderWhatsAppBtn").onclick = sendOrder;
+  document.getElementById("closeContactModalBtn").onclick = ()=> document.getElementById("contactCheckoutModal").style.display = "none";
+  document.getElementById("backToTop").onclick = ()=> window.scrollTo({top:0,behavior:"smooth"});
+  document.getElementById("whatsappFloat").onclick = ()=> window.open("https://wa.me/254716180343?text=Hello Shee's Kitchen","_blank");
+  document.getElementById("newsBtn").onclick = sendNewsletter;
+  document.getElementById("sendCustomInquiry").onclick = ()=>{ let name=document.getElementById("customName").value, occ=document.getElementById("customOccasion").value, weight=document.getElementById("customWeight").value, note=document.getElementById("customNotes").value; let msg=`CUSTOM CAKE REQUEST\nName: ${name || "Guest"}\nOccasion: ${occ || "Celebration"}\nWeight: ${weight}kg (${formatKES(weight*PER_KG)})\nDesign & Flavor: ${note || "Let's discuss!"}`; window.open(`https://wa.me/254716180343?text=${encodeURIComponent(msg)}`,"_blank"); showToast("Request sent! Check WhatsApp."); };
+  document.getElementById("closeModalBtn").onclick = ()=> document.getElementById("customModal").style.display = "none";
+  document.getElementById("closeStoryModalBtn").onclick = ()=> document.getElementById("storyModal").style.display = "none";
+  document.getElementById("confirmDeleteBtn").onclick = deleteItem;
+  document.getElementById("cancelDeleteBtn").onclick = ()=>{ document.getElementById("deleteConfirmModal").style.display = "none"; pendingDeleteIdx=null; };
+  const galleryImgs = ["https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg","https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg","https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg","https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg","https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg"];
+  document.getElementById("galleryGrid").innerHTML = galleryImgs.map(img => `<div class="gallery-item"><img src="${img}?auto=compress&cs=tinysrgb&w=400" alt="cake gallery"></div>`).join('');
+  document.getElementById("sendCustomInquiryOrig").onclick = ()=>{ let name=document.getElementById("customNameOrig").value, occ=document.getElementById("customOccasionOrig").value, weight=document.getElementById("customWeightOrig").value, note=document.getElementById("customNotesOrig").value; let msg=`Custom cake: ${name}, ${occ}, ${weight}kg, ${note}`; window.open(`https://wa.me/254716180343?text=${encodeURIComponent(msg)}`,"_blank"); document.getElementById("customModal").style.display = "none"; };
 </script>
 </body>
 </html>
+```
