@@ -135,7 +135,7 @@
     <div class="gallery-grid" id="galleryGrid"></div>
   </div>
 
-  <footer class="footer-elegant"><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Shee's Kitchen</h4><p>Artisan bakery in Juja, Kenya.</p><p>Over 70 cake varieties</p></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 0716 180 343</p><p><i class="fas fa-envelope"></i> hello@sheeskitchen.com</p></div><div class="footer-col"><h4>Discover</h4><a href="#home">Home</a><a href="#shop">Shop</a><a id="customCakeFooterBtn" style="cursor:pointer;">Custom Cake</a></div><div class="footer-col"><h4>Newsletter</h4><div class="news-input-wrapper"><input type="email" id="newsEmail" placeholder="Your email"><button id="newsBtn">Subscribe</button></div></div></div><div class="footer-bottom" style="text-align:center; font-size:0.75rem;">© 2025 Shee's Kitchen — Every Cake Handcrafted with Love</div></div></footer>
+  <footer class="footer-elegant"><div class="container"><div class="footer-inner"><div class="footer-col"><h4>Shee's Kitchen</h4><p>Artisan bakery in Juja, Kenya.</p><p>Over 70 cake varieties</p></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 0716 180 343</p><p><i class="fas fa-envelope"></i> irungubetty96@gmail.com</p></div><div class="footer-col"><h4>Discover</h4><a href="#home">Home</a><a href="#shop">Shop</a><a id="customCakeFooterBtn" style="cursor:pointer;">Custom Cake</a></div><div class="footer-col"><h4>Newsletter</h4><div class="news-input-wrapper"><input type="email" id="newsEmail" placeholder="Your email"><button id="newsBtn">Subscribe</button></div></div></div><div class="footer-bottom" style="text-align:center; font-size:0.75rem;">© 2025 Shee's Kitchen — Every Cake Handcrafted with Love</div></div></footer>
 </div>
 
 <div class="cart-sidebar" id="cartSidebar"><h3>Your Bag</h3><div class="cart-items-scroll" id="cartItemsList"></div><div class="cart-footer"><div id="cartTotal"></div><button class="btn-primary" id="checkoutBtn" style="width:100%; margin-bottom:10px;">Proceed to Order</button><button id="closeCartBtn" style="background:#f0e0d4; border:none; padding:10px; width:100%; border-radius:60px;">Close</button></div></div>
@@ -152,9 +152,8 @@
   const PER_KG = 1500;
   let cart = [], currentCategory = "all";
 
-  // Complete 70+ cake list with all requested varieties - NO EMOJIS
+  // 75+ cake varieties - no emojis
   const products = [
-    // Celebration Cakes (11)
     { id:1, name:"Birthday Sparkle Cake", category:"celebration", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Birthday", story:"Colorful sprinkles, vanilla sponge, perfect for kids and adults." },
     { id:2, name:"Anniversary Rose Elegance", category:"celebration", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Anniversary", story:"Gold drip with fresh roses, romantic design." },
     { id:3, name:"Graduation Cap Cake", category:"celebration", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Graduation", story:"Chocolate ganache with edible graduation cap." },
@@ -164,7 +163,6 @@
     { id:7, name:"Retirement Celebration", category:"celebration", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Retirement", story:"Elegant gold leaf, best wishes message." },
     { id:8, name:"Congratulations Cake", category:"celebration", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Congrats", story:"Bold lettering and star decorations." },
     { id:9, name:"Farewell Flight Cake", category:"celebration", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Farewell", story:"Airplane theme, perfect for moving away." },
-    // Wedding Cakes (8)
     { id:10, name:"Traditional Tiered Wedding", category:"wedding", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Wedding", story:"Classic ivory tiers with intricate piping." },
     { id:11, name:"Modern Minimalist", category:"wedding", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Modern", story:"Clean lines, monochrome palette, geometric details." },
     { id:12, name:"Rustic Wedding Cake", category:"wedding", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Rustic", story:"Burlap and wood accents, natural charm." },
@@ -172,14 +170,12 @@
     { id:14, name:"Luxury Designer Cake", category:"wedding", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Luxury", story:"Gold foil accents, 3D sculpted elements." },
     { id:15, name:"Semi-Naked Wedding", category:"wedding", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Semi-Naked", story:"Light crumb coat with berries." },
     { id:16, name:"Cultural Wedding Cake", category:"wedding", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Cultural", story:"Traditional motifs and symbolic decorations." },
-    // Event & Corporate (6)
     { id:17, name:"Corporate Branded Cake", category:"event", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Corporate", story:"Edible logo print, company colors." },
     { id:18, name:"Product Launch Cake", category:"event", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Launch", story:"Sleek design matching brand identity." },
     { id:19, name:"Office Celebration", category:"event", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Office", story:"Team spirit theme with fun messages." },
     { id:20, name:"Company Anniversary", category:"event", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Milestone", story:"Years of excellence commemorative design." },
     { id:21, name:"Award Ceremony Cake", category:"event", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Awards", story:"Golden trophy accents, elegant finish." },
     { id:22, name:"Networking Event", category:"event", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Networking", story:"Elegant finger desserts and mini bites." },
-    // Custom & Themed (7)
     { id:23, name:"Cartoon Character Cake", category:"custom-themed", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Cartoon", story:"Custom edible image of favorite character." },
     { id:24, name:"Superhero Cake", category:"custom-themed", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Superhero", story:"Comic book style, cape and mask design." },
     { id:25, name:"Princess Castle Cake", category:"custom-themed", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Princess", story:"Fondant castle towers and royal details." },
@@ -187,7 +183,6 @@
     { id:27, name:"Hobby Cake", category:"custom-themed", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Hobby", story:"Music notes, travel suitcase, or fashion theme." },
     { id:28, name:"Movie & TV Theme", category:"custom-themed", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Movie", story:"Iconic props and film strip design." },
     { id:29, name:"Personalized Photo Cake", category:"custom-themed", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Photo", story:"Edible photo print with custom message." },
-    // Classic Flavors (8)
     { id:30, name:"Classic Chocolate Fudge", category:"classic", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Chocolate", story:"Rich fudge layers, deep cocoa flavor." },
     { id:31, name:"Vanilla Bean Dream", category:"classic", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Vanilla", story:"Madagascar vanilla bean specks." },
     { id:32, name:"Red Velvet Royale", category:"classic", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Red Velvet", story:"Cream cheese frosting, crimson crumb." },
@@ -196,7 +191,6 @@
     { id:35, name:"Lemon Burst", category:"classic", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Lemon", story:"Zesty citrus flavor with lemon glaze." },
     { id:36, name:"Carrot Walnut", category:"classic", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Carrot", story:"Cream cheese icing, walnuts and spice." },
     { id:37, name:"Traditional Fruit Cake", category:"classic", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Fruit Cake", story:"Rich with dried fruits and nuts." },
-    // Premium & Gourmet (7)
     { id:38, name:"Oreo Explosion", category:"premium", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Oreo", story:"Cookies and cream filling, crushed Oreo topping." },
     { id:39, name:"Ferrero Rocher", category:"premium", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Ferrero", story:"Hazelnut praline with crunchy wafer." },
     { id:40, name:"Nutella Heaven", category:"premium", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Nutella", story:"Hazelnut spread filling and topping." },
@@ -204,14 +198,12 @@
     { id:42, name:"Lotus Biscoff", category:"premium", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Biscoff", story:"Caramelized biscuit spread, cookie crumble." },
     { id:43, name:"Chocolate Ganache", category:"premium", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Ganache", story:"Silky dark chocolate ganache coating." },
     { id:44, name:"Cheesecake Inspired", category:"premium", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Cheesecake", story:"Creamy layers with graham cracker base." },
-    // Special Diet (6)
     { id:45, name:"Eggless Chocolate", category:"diet", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Eggless", story:"No eggs, moist and decadent." },
     { id:46, name:"Vegan Vanilla", category:"diet", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Vegan", story:"Plant-based milk and coconut cream." },
     { id:47, name:"Gluten Free Fudge", category:"diet", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Gluten Free", story:"Almond flour base, rich chocolate." },
     { id:48, name:"Sugar Free Vanilla", category:"diet", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Sugar Free", story:"Stevia sweetened, diabetic friendly." },
     { id:49, name:"Keto Chocolate", category:"diet", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Keto", story:"Low carb, high fat, almond flour." },
     { id:50, name:"Healthy Low Calorie", category:"diet", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Low Calorie", story:"Greek yogurt frosting, reduced sugar." },
-    // Cake Styles (7)
     { id:51, name:"Buttercream Rosette", category:"styles", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Buttercream", story:"Swirled rosettes, velvety finish." },
     { id:52, name:"Fondant Elegance", category:"styles", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Fondant", story:"Smooth flawless fondant covering." },
     { id:53, name:"Drip Cake", category:"styles", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Drip", story:"Chocolate ganache drip effect." },
@@ -219,20 +211,17 @@
     { id:55, name:"Semi Naked Rustic", category:"styles", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Semi Naked", story:"Light crumb coat, rustic charm." },
     { id:56, name:"Mirror Glaze", category:"styles", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Mirror Glaze", story:"High shine colorful glaze finish." },
     { id:57, name:"Textured Art Cake", category:"styles", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Textured", story:"Palette knife strokes, artistic finish." },
-    // Mini & Individual (5)
     { id:58, name:"Cupcake Dozen", category:"mini", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Cupcakes", story:"Assorted flavors, perfect for parties." },
     { id:59, name:"Bento Lunchbox Cake", category:"mini", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Bento", story:"Personal 4 inch cake, cute packaging." },
     { id:60, name:"Mini Celebration Cake", category:"mini", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Mini", story:"Serves 2-3, perfect for small gatherings." },
     { id:61, name:"Cake Slices", category:"mini", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Slice", story:"Grab and go single servings." },
     { id:62, name:"Jar Cakes", category:"mini", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Jar", story:"Layered in mason jar, gift ready." },
-    // Specialty & Unique (6)
     { id:63, name:"Number Cake", category:"specialty", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Number", story:"Shaped number for milestone birthdays." },
     { id:64, name:"Letter Cake", category:"specialty", image:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Letter", story:"Initials cake, personalized design." },
     { id:65, name:"Pinata Smash Cake", category:"specialty", image:"https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Pinata", story:"Hidden candy inside, smash and celebrate." },
     { id:66, name:"Pull Apart Cupcake Cake", category:"specialty", image:"https://images.pexels.com/photos/1766837/pexels-photo-1766837.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Pull Apart", story:"Cupcake arrangement forming a shape." },
     { id:67, name:"Money Surprise Cake", category:"specialty", image:"https://images.pexels.com/photos/162990/pexels-photo-162990.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Money", story:"Hidden bills, fun surprise inside." },
     { id:68, name:"Ice Cream Cake", category:"specialty", image:"https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Ice Cream", story:"Layered frozen treat, cake and ice cream." },
-    // Seasonal & Holiday (7)
     { id:69, name:"Christmas Yule Log", category:"seasonal", image:"https://images.pexels.com/photos/1740345/pexels-photo-1740345.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Christmas", story:"Gingerbread spice, festive decorations." },
     { id:70, name:"Valentine's Heart Cake", category:"seasonal", image:"https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Valentine", story:"Heart shape, raspberry rose filling." },
     { id:71, name:"Easter Bunny Cake", category:"seasonal", image:"https://images.pexels.com/photos/2067429/pexels-photo-2067429.jpeg?auto=compress&cs=tinysrgb&w=500", badge:"Easter", story:"Carrot and coconut, bunny design." },
